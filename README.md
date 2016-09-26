@@ -1,5 +1,5 @@
 # htn2src2
-Slightly newer version of htn2src2.0-RC5
+Slightly newer version of htn2src2.0-RC5 from early 2005.
 
 
     +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
