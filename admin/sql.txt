@@ -1,0 +1,1200 @@
+<?php
+
+CREATE DATABASE `usr_web43_3`;
+USE usr_web43_3;
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `abooks`
+-- 
+
+CREATE TABLE `abooks` (
+  `user` smallint(6) default NULL,
+  `set1` text NOT NULL,
+  `set2` text NOT NULL,
+  `set3` text NOT NULL,
+  `set4` text NOT NULL,
+  UNIQUE KEY `user` (`user`)
+) TYPE=MyISAM;
+
+-- 
+-- Daten für Tabelle `abooks`
+-- 
+
+INSERT INTO `abooks` VALUES (6, '2', '', '', '');
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `attacks`
+-- 
+
+CREATE TABLE `attacks` (
+  `from_pc` smallint(6) default '0',
+  `from_usr` smallint(6) default '0',
+  `from_cluster` int(11) default '0',
+  `to_pc` smallint(6) default '0',
+  `to_usr` smallint(6) default '0',
+  `to_cluster` int(11) default '0',
+  `type` enum('block','hijack','scan','smash','trojan') NOT NULL default 'block',
+  `option` enum('cpu','deactivate','defacement','firewall','sdk','transfer') NOT NULL default 'cpu',
+  `success` tinyint(1) default '0',
+  `noticed` tinyint(1) default '0',
+  `time` int(11) NOT NULL default '0'
+) TYPE=MyISAM;
+
+-- 
+-- Tabellenstruktur für Tabelle `cboards`
+-- 
+
+CREATE TABLE `cboards` (
+  `cluster` smallint(6) default NULL,
+  `thread` int(9) NOT NULL auto_increment,
+  `relative` int(9) default NULL,
+  `user` smallint(6) default NULL,
+  `user_name` tinytext,
+  `user_cstat` smallint(6) default NULL,
+  `time` varchar(10) default NULL,
+  `subject` tinytext,
+  `content` text,
+  `box` tinyint(4) default NULL,
+  PRIMARY KEY  (`thread`)
+) TYPE=MyISAM AUTO_INCREMENT=1 ;
+
+-- 
+-- Tabellenstruktur für Tabelle `cl_pacts`
+-- 
+
+CREATE TABLE `cl_pacts` (
+  `cluster` smallint(6) default NULL,
+  `convent` tinyint(4) default NULL,
+  `partner` smallint(6) default NULL
+) TYPE=MyISAM;
+
+
+-- 
+-- Tabellenstruktur für Tabelle `cl_reqs`
+-- 
+
+CREATE TABLE `cl_reqs` (
+  `user` smallint(6) default NULL,
+  `cluster` smallint(6) default NULL,
+  `comment` text,
+  `dealed` char(3) default 'no'
+) TYPE=MyISAM;
+
+-- 
+-- Tabellenstruktur für Tabelle `clusters`
+-- 
+
+CREATE TABLE `clusters` (
+  `id` int(6) NOT NULL auto_increment,
+  `name` varchar(50) default NULL,
+  `code` varchar(16) default NULL,
+  `events` text,
+  `tax` int(11) NOT NULL default '1',
+  `money` bigint(20) NOT NULL default '0',
+  `infotext` text,
+  `points` mediumint(9) default NULL,
+  `logofile` tinytext,
+  `homepage` tinytext,
+  `box1` varchar(50) default 'Wichtig',
+  `box2` varchar(50) default 'Allgemein',
+  `box3` varchar(50) default 'Alte Beiträge',
+  `acceptnew` char(3) default 'yes',
+  `rank` smallint(6) default '0',
+  `notice` text,
+  `srate_total_cnt` int(11) NOT NULL default '0',
+  `srate_success_cnt` int(11) default '0',
+  `srate_noticed_cnt` int(11) default '0',
+  `battle` varchar(255) NOT NULL default '1',
+  PRIMARY KEY  (`id`)
+) TYPE=MyISAM AUTO_INCREMENT=9 ;
+
+-- 
+-- Daten für Tabelle `clusters`
+-- 
+
+INSERT INTO `clusters` VALUES (3, 'United Hacker Organisation', 'UHO', '10.05. um 16:22 Der Cluster [cluster=5]KDVR[/cluster] hat <i>Beistandsvertrag</i> mit euch annulliert!\n09.05. um 11:36 Der Cluster [cluster=5]KDVR[/cluster] hat <i>Beistandsvertrag</i> mit euch eingetragen.\n 23:28 Der Cluster wird durch GoldenEye gegr&uuml;ndet!', 1, 8, NULL, 1775, NULL, NULL, 'Wichtig', 'Allgemein', 'Alte Beiträge', 'yes', 5, NULL, 16, 12, 4, '1');
+INSERT INTO `clusters` VALUES (2, 'cRaZy lEuTz', '*cL', '09.05. um 06:42 Der Cluster [cluster=4]DK[/cluster] hat <i>Wing-Treaty</i> mit euch annulliert!\n09.05. um 06:36 [usr=4]mEgAfAnTa[/usr] verl&auml;sst den Cluster und wechselt zu [cluster=4]DK[/cluster].\n08.05. um 21:19 Der Cluster [cluster=4]DK[/cluster] hat <i>Wing-Treaty</i> mit euch eingetragen.\n08.05. um 15:28 [usr=4]mEgAfAnTa[/usr] tr&auml;gt <i>Wing-Treaty</i> mit dem Cluster [cluster=4]Blubb[/cluster] ein.\n 11:41 Der Cluster wird durch mEgAfAnTa gegr&uuml;ndet!', 1, 3, 'die *cL sind die Styler aus Ostberlin.... keiner kann sich mit uns messen---wir sind am TOLLsten!', 471, '', '', 'Wichtig', 'Allgemein', 'Alte Beitr&auml;ge', 'yes', 2, '', 0, 0, 0, '1');
+INSERT INTO `clusters` VALUES (4, 'Die Kiffer', 'DK', '10.05. um 19:54 [usr=4]mEgAfAnTa[/usr] tritt dem Cluster bei.\n10.05. um 18:59 [usr=4]mEgAfAnTa[/usr] verl&auml;sst den Cluster!\n09.05. um 06:42 [usr=2]MCS1408[/usr] annulliert <i>Wing-Treaty</i> mit dem Cluster [cluster=2]*cL[/cluster]!\n09.05. um 06:36 [usr=4]mEgAfAnTa[/usr] tritt dem Cluster bei.\n08.05. um 21:19 [usr=2]MCS1408[/usr] tr&auml;gt <i>Wing-Treaty</i> mit dem Cluster [cluster=2]*cL[/cluster] ein.\n08.05. um 15:28 Der Cluster [cluster=2]*cL[/cluster] hat <i>Wing-Treaty</i> mit euch eingetragen.\n 14:43 Der Cluster wird durch MCS1408 gegr&uuml;ndet!', 1, 10, 'wir sind die kiffer aus dem d&auml;nischen k&ouml;nigreich, auch wenns nich ganz stimm, aber sind ja gleich nebenan :/\r\naja und noch was: morgens nen joint und der tag is dein freund, noch nen joint hinterher und du hast nen freund mehr.\r\nu&auml;h', 18690, 'http://www.lustige-baby-bilder.de/Kiffen-Fahrzeuge-Erfindungen-Bilder/kiffen01_04.jpg', 'http://www.ich-will-kiffen.de', 'Wir', 'Kif-', 'fen', 'yes', 2, '', 124, 117, 16, '1');
+INSERT INTO `clusters` VALUES (5, 'Koreanische Demokratische Volksrepublik', 'KDVR', '13.05. um 23:27 [usr=9]Queribus[/usr] annulliert <i>Nicht-Angriffs-Pakt</i> mit dem Cluster [cluster=7]BdC[/cluster]!\n12.05. um 21:34 [usr=9]Queribus[/usr] annulliert <i>Kriegserkl&auml;rung</i> mit dem Cluster [cluster=7]BdC[/cluster]!\n12.05. um 21:34 [usr=9]Queribus[/usr] tr&auml;gt <i>Nicht-Angriffs-Pakt</i> mit dem Cluster [cluster=7]BdC[/cluster] ein.\n12.05. um 15:24 Der Cluster [cluster=7]BdC[/cluster] hat <i>Nicht-Angriffs-Pakt</i> mit euch eingetragen.\n10.05. um 17:45 [usr=9]Queribus[/usr] tr&auml;gt <i>Kriegserkl&auml;rung</i> mit dem Cluster [cluster=7]BdC[/cluster] ein.\n10.05. um 16:22 [usr=9]Queribus[/usr] annulliert <i>Beistandsvertrag</i> mit dem Cluster [cluster=3]UHO[/cluster]!\n10.05. um 14:42 Der Cluster [cluster=7]BdC[/cluster] hat <i>Beistandsvertrag</i> mit euch annulliert!\n09.05. um 16:12 Der Cluster [cluster=7]BdC[/cluster] hat <i>Beistandsvertrag</i> mit euch eingetragen.\n09.05. um 11:36 [usr=9]Queribus[/usr] tr&auml;gt <i>Beistandsvertrag</i> mit dem Cluster [cluster=3]UHO[/cluster] ein.\n 11:35 Der Cluster wird durch Queribus gegr&uuml;ndet!', 1, 5, '', 5533, 'http://www.unitedflags.com/images/flaggen_einzelansicht317x190/korea_nord.jpg', '', 'Wichtig', 'Allgemein', 'Alte Beitr&auml;ge', 'yes', 3, '', 56, 31, 34, '1');
+INSERT INTO `clusters` VALUES (6, 'Präsidiale Bundesrepublik Mexico', 'PBM', '13.05. um 19:21 [usr=3]SournoisIntrus[/usr] spendet dem Cluster 100000 Credits.\n13.05. um 19:20 [usr=3]SournoisIntrus[/usr] spendet dem Cluster 100000 Credits.\n13.05. um 19:20 [usr=3]SournoisIntrus[/usr] spendet dem Cluster 100000 Credits.\n13.05. um 19:19 [usr=3]SournoisIntrus[/usr] spendet dem Cluster 100000 Credits.\n13.05. um 19:19 [usr=3]SournoisIntrus[/usr] spendet dem Cluster 100000 Credits.\n13.05. um 16:48 [usr=3]SournoisIntrus[/usr] spendet dem Cluster 200000 Credits.\n13.05. um 16:44 [usr=3]SournoisIntrus[/usr] spendet dem Cluster 100000 Credits.\n12.05. um 21:49 [usr=3]SournoisIntrus[/usr] spendet dem Cluster 300000 Credits.\n12.05. um 19:55 [usr=3]SournoisIntrus[/usr] spendet dem Cluster 100000 Credits.\n12.05. um 19:54 [usr=3]SournoisIntrus[/usr] spendet dem Cluster 100000 Credits.\n12.05. um 19:53 [usr=3]SournoisIntrus[/usr] spendet dem Cluster 200000 Credits.\n12.05. um 19:01 [usr=3]SournoisIntrus[/usr] spendet dem Cluster 100130 Credits.\n12.05. um 19:00 [usr=3]SournoisIntrus[/usr] spendet dem Cluster 299871 Credits.\n11.05. um 18:11 [usr=3]SournoisIntrus[/usr] spendet dem Cluster 130 Credits.\n11.05. um 18:10 [usr=3]SournoisIntrus[/usr] spendet dem Cluster 499867 Credits.\n11.05. um 18:09 [usr=3]SournoisIntrus[/usr] setzt Mitgliedsbeitrag auf 99999 Credits pro Tag\n 16:06 Der Cluster wird durch SournoisIntrus gegr&uuml;ndet!', 99999, 2599999, 'exiko bzw. die Vereinigten Staaten von Mexiko setzen sich aus 31 Bundesstaaten zusammen. Die letzte &Auml;nderung der Verfassung aus dem Jahr 1917 fand 1994 statt.\r\n\r\nMexiko besitzt ein sehr gro&szlig;es Parlament (Congreso de la Uni&oacute;n), das in zwei Kammern geteilt ist, einerseits das Abgeordnetenhaus, die C&aacute;mara Federal de Diputados, mit 500 Mitgliedern und andererseits den Senat mit 128 Mitgliedern.\r\n\r\nDer Pr&auml;sident wird alle sechs Jahre direkt gew&auml;hlt und kann nicht wiedergew&auml;hlt werden.\r\n\r\nSt&auml;rkste Partei ist derzeit der Partido Acci&oacute;n Nacional/PAN mit 218 Abgeordneten, was nahezu einer Verdoppelung gegen&uuml;ber den vorhergehenden Wahlen entspricht, gefolgt von jener Partei, die etwa 70 Jahre lang die Politik des Landes fast uneingeschr&auml;nkt bestimmt hatte, dem Partido Revolucionario Institucional/PRI mit 209 Sitzen. Im Senat und in zahlreichen politischen Organisationen allerdings h&auml;lt PRI nach wie vor die Mehrheit. Alle anderen Parteien im Parlament liegen weit abgeschlagen zur&uuml;ck, wie der Partido de la Revoluci&oacute;n/PRD oder der Partido de Trabajo/PT. Die Versuche einiger Intellektueller in den letzten Jahren, eine neue Opposition in Form einer linken und &ouml;kologisch motivierten Partei aufzubauen, blieb bislang erfolglos.\r\n\r\nAktuelle politische Situation:\r\n\r\nMit der Wahl von Vicent Fox, dem ehemaligen Chef der Firma Coca Cola in Mexiko, dessen Ziel insbesondere die Modernisierung des Landes ist, haben sich die Beziehungen zu den USA deutlich verbessert, was einher ging mit einer Welle des neoliberalen Einflusses. Der Oberste Gerichtshof hat sich inzwischen gegen einen Teil der anstehenden Privatisierungsvorhaben ausgesprochen. Bereits neun Monate nach seinem Regierungsantritt stieg der Partido Verde Ecologista de M&eacute;xico/PVEM aus der Koalition mit PAN aus. Als Ausweg wurde ein Kooperationsabkommen mit den im Kongress vertretenen Parteien geschlossen.\r\n\r\nIm Jahr 2001 wurden die Geheimdienstarchive ge&ouml;ffnet, um die Menschenrechtsverletzungen der Vergangenheit aufkl&auml;ren zu k&ouml;nnen. Insbesondere geht es dabei um die ber&uuml;hmte Niederschlagung von Studentenunruhen im Jahr 1968, wo mehrere hundert StudentInnen erschossen wurden.\r\n\r\nUm die illegale Einwanderung von MexikanerInnen in die USA in den Griff zu bekommen (es wird vermutet, dass in den USA mehrere Millionen MexikanerInnen illegal leben), wurde 2002 ein Abkommen zur Verbesserung der Grenzabfertigung geschlossen. Der Kongress nahm wenige Wochen sp&auml;ter ein verfassungsm&auml;&szlig;iges Recht in Anspruch, um die offensichtlich freundliche Haltung des Pr&auml;sidenten gegen&uuml;ber den USA einzuschr&auml;nken: er verbot ihm eine geplante offizielle US-Reise.\r\n\r\nSeit dem Amtsantritt Fox‘ ist hat eine Verschlechterung der Beziehungen zwischen Mexiko und Kuba stattgefunden.\r\n\r\nIm J&auml;nner 2003 ist der bisherige Au&szlig;enminister, der renommierte Intellektuelle Jorge G. Casta&ntilde;eda, zur&uuml;ckgetreten. Als Grund wurde kolportiert, dass er sich auf seinem Posten gelangweilt habe. Damit ist der Regierung auch eine wesentliche Symbolfigur als Verbindung hin zur Zivilgesellschaft abhanden gekommen. Der Erfolg der Regierung Fox wird ohnehin international (insbesondere in Europa) immer wieder daran gemessen, wie sehr er bereit und erfolgreich ist, die sozialen Probleme in Chiapas und Oaxaca in den Griff zu bekommen. Er schien zumindest nach au&szlig;en hin in den ersten Monaten seiner Amtszeit sehr interessant an einem Dialog mit dem Ej&eacute;rcito Zapatista de Liberaci&oacute;n Nacional (EZLN) zu sein und einige Zugest&auml;ndnisse an die indigene Bev&ouml;lkerung zu machen. Seitdem aber ist das Engagement eingeschlafen. Die Indigenen sind nach wie vor marginalisiert bzw. von allen politischen, sozialen und wirtschaftlichen Verbesserungen ausgeschlossen.', 23686, 'http://www.andalemexico.com/photos/Mexico_map.jpg', '', 'Wichtig', 'Allgemein', 'Alte Beitr&auml;ge', 'yes', 1, '', 120, 110, 14, '1');
+INSERT INTO `clusters` VALUES (7, 'Bund der Caudillos', 'BdC', '13.05. um 23:27 Der Cluster [cluster=5]KDVR[/cluster] hat <i>Nicht-Angriffs-Pakt</i> mit euch annulliert!\n12.05. um 21:34 Der Cluster [cluster=5]KDVR[/cluster] hat <i>Kriegserkl&auml;rung</i> mit euch annulliert!\n12.05. um 21:34 Der Cluster [cluster=5]KDVR[/cluster] hat <i>Nicht-Angriffs-Pakt</i> mit euch eingetragen.\n12.05. um 16:53 [usr=14]RufusMalibu[/usr] tritt dem Cluster bei.\n12.05. um 15:24 [usr=10]Franco[/usr] tr&auml;gt <i>Nicht-Angriffs-Pakt</i> mit dem Cluster [cluster=5]KDVR[/cluster] ein.\n10.05. um 17:45 Der Cluster [cluster=5]KDVR[/cluster] hat <i>Kriegserkl&auml;rung</i> mit euch eingetragen.\n10.05. um 14:42 [usr=10]Franco[/usr] annulliert <i>Beistandsvertrag</i> mit dem Cluster [cluster=5]KDVR[/cluster]!\n09.05. um 16:12 [usr=10]Franco[/usr] tr&auml;gt <i>Beistandsvertrag</i> mit dem Cluster [cluster=5]KDVR[/cluster] ein.\n 16:11 Der Cluster wird durch Franco gegr&uuml;ndet!', 1, 9, NULL, 1549, NULL, NULL, 'Wichtig', 'Allgemein', 'Alte Beiträge', 'yes', 6, NULL, 5, 1, 5, '1');
+INSERT INTO `clusters` VALUES (8, ':: Team von HackTheNet ::', ':: Team ::', ' 14:37 Der Cluster wird durch BODY-SNATCHER gegr&uuml;ndet!', 1, 3, 'Dies ist ein Cluster, der nur zu Testzwecken da ist. \r\n....................................................\r\nWir sorgen nur daf&uuml;r, dass das Spiel blanced bleibt.\r\n\r\n\r\nMfg The Team\r\n\r\n<a href=\\"http://www.fun-synchro.de\\">www.fun-synchro.de</a>|<a href=\\"http://www.beta-tests.net\\">www.beta-tests.net</a>|<a href=\\"http://www.htn-game.tk\\">www.htn-game.tk</a>', 2048, '', '', 'Wichtig', 'Allgemein', 'Alte Beitr&auml;ge', 'yes', 4, '', 0, 0, 0, '1');
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `da_participants`
+-- 
+
+CREATE TABLE `da_participants` (
+  `relative` int(11) NOT NULL default '0',
+  `pc` smallint(6) NOT NULL default '0',
+  `ip` varchar(7) NOT NULL default '',
+  `owner` smallint(6) NOT NULL default '0',
+  `owner_name` varchar(40) NOT NULL default ''
+) TYPE=MyISAM;
+
+-- 
+-- Daten für Tabelle `da_participants`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `distr_attacks`
+-- 
+
+CREATE TABLE `distr_attacks` (
+  `id` smallint(6) NOT NULL auto_increment,
+  `cluster` smallint(6) default NULL,
+  `initiator_pc` smallint(6) default NULL,
+  `initiator_usr` smallint(6) default NULL,
+  `target` smallint(6) default NULL,
+  `item` enum('av','cpu','fw') NOT NULL default 'av',
+  PRIMARY KEY  (`id`)
+) TYPE=MyISAM AUTO_INCREMENT=101 ;
+
+-- 
+-- Daten für Tabelle `distr_attacks`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `gewinnspiel`
+-- 
+
+CREATE TABLE `gewinnspiel` (
+  `id` int(11) NOT NULL auto_increment,
+  `jackpot` varchar(255) NOT NULL default '',
+  `zahl` varchar(255) NOT NULL default '',
+  UNIQUE KEY `id` (`id`)
+) TYPE=MyISAM AUTO_INCREMENT=5 ;
+
+-- 
+-- Daten für Tabelle `gewinnspiel`
+-- 
+
+INSERT INTO `gewinnspiel` VALUES (1, '', '"noch keine Runde"');
+INSERT INTO `gewinnspiel` VALUES (2, '20000', '5');
+INSERT INTO `gewinnspiel` VALUES (3, '20000', '83');
+INSERT INTO `gewinnspiel` VALUES (4, '20000', '');
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `gewinnspiel_tipps`
+-- 
+
+CREATE TABLE `gewinnspiel_tipps` (
+  `tipp` varchar(255) NOT NULL default '',
+  `userid` int(11) NOT NULL default '0',
+  `time` varchar(255) NOT NULL default ''
+) TYPE=MyISAM;
+
+-- 
+-- Daten für Tabelle `gewinnspiel_tipps`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `logins`
+-- 
+
+CREATE TABLE `logins` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `ip` tinytext NOT NULL,
+  `usr_id` smallint(6) NOT NULL default '0',
+  `time` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`id`)
+) TYPE=MyISAM AUTO_INCREMENT=378 ;
+
+-- 
+-- Daten für Tabelle `logins`
+-- 
+
+INSERT INTO `logins` VALUES (1, '217.186.42.118', 1, 1115387077);
+INSERT INTO `logins` VALUES (2, '217.186.42.118', 1, 1115387572);
+INSERT INTO `logins` VALUES (3, '217.186.42.118', 1, 1115387670);
+INSERT INTO `logins` VALUES (4, '217.186.42.118', 1, 1115387989);
+INSERT INTO `logins` VALUES (5, '217.186.37.62', 1, 1115393151);
+INSERT INTO `logins` VALUES (6, '217.186.37.62', 1, 1115393207);
+INSERT INTO `logins` VALUES (7, '217.186.37.62', 1, 1115393218);
+INSERT INTO `logins` VALUES (8, '217.186.37.62', 1, 1115393419);
+INSERT INTO `logins` VALUES (9, '217.186.37.62', 1, 1115396167);
+INSERT INTO `logins` VALUES (10, '217.186.37.62', 1, 1115396731);
+INSERT INTO `logins` VALUES (11, '217.186.37.189', 1, 1115410314);
+INSERT INTO `logins` VALUES (12, '217.186.37.189', 1, 1115410460);
+INSERT INTO `logins` VALUES (13, '217.186.37.189', 1, 1115411818);
+INSERT INTO `logins` VALUES (14, '217.186.37.189', 1, 1115412325);
+INSERT INTO `logins` VALUES (15, '217.186.37.189', 1, 1115412514);
+INSERT INTO `logins` VALUES (16, '217.186.37.25', 1, 1115425954);
+INSERT INTO `logins` VALUES (17, '217.186.37.25', 1, 1115426862);
+INSERT INTO `logins` VALUES (18, '217.186.37.25', 1, 1115430052);
+INSERT INTO `logins` VALUES (19, '217.186.37.25', 1, 1115451639);
+INSERT INTO `logins` VALUES (20, '217.186.37.25', 1, 1115452804);
+INSERT INTO `logins` VALUES (21, '217.186.37.25', 2, 1115452807);
+INSERT INTO `logins` VALUES (22, '217.186.37.25', 1, 1115452927);
+INSERT INTO `logins` VALUES (23, '217.186.37.25', 2, 1115452957);
+INSERT INTO `logins` VALUES (24, '217.186.37.25', 1, 1115453012);
+INSERT INTO `logins` VALUES (25, '217.186.37.25', 2, 1115453057);
+INSERT INTO `logins` VALUES (26, '217.186.37.25', 1, 1115453783);
+INSERT INTO `logins` VALUES (27, '217.186.37.25', 1, 1115454733);
+INSERT INTO `logins` VALUES (28, '84.190.24.200', 3, 1115455041);
+INSERT INTO `logins` VALUES (29, '82.82.214.3', 4, 1115456060);
+INSERT INTO `logins` VALUES (30, '217.186.37.25', 2, 1115457874);
+INSERT INTO `logins` VALUES (31, '217.186.37.25', 1, 1115458205);
+INSERT INTO `logins` VALUES (32, '217.186.37.25', 1, 1115458255);
+INSERT INTO `logins` VALUES (33, '217.186.37.25', 1, 1115458433);
+INSERT INTO `logins` VALUES (34, '84.190.24.200', 3, 1115460112);
+INSERT INTO `logins` VALUES (35, '82.82.214.3', 4, 1115460244);
+INSERT INTO `logins` VALUES (36, '84.190.24.200', 3, 1115462058);
+INSERT INTO `logins` VALUES (37, '84.190.24.200', 5, 1115462316);
+INSERT INTO `logins` VALUES (38, '84.190.24.200', 3, 1115462414);
+INSERT INTO `logins` VALUES (39, '217.186.37.25', 1, 1115465697);
+INSERT INTO `logins` VALUES (40, '217.186.37.25', 2, 1115465894);
+INSERT INTO `logins` VALUES (41, '217.186.37.25', 2, 1115469313);
+INSERT INTO `logins` VALUES (42, '84.190.24.200', 3, 1115469746);
+INSERT INTO `logins` VALUES (43, '80.185.152.165', 6, 1115471598);
+INSERT INTO `logins` VALUES (44, '217.186.37.25', 1, 1115472079);
+INSERT INTO `logins` VALUES (45, '217.186.37.25', 1, 1115473451);
+INSERT INTO `logins` VALUES (46, '84.190.0.199', 3, 1115476262);
+INSERT INTO `logins` VALUES (47, '80.185.146.244', 6, 1115479174);
+INSERT INTO `logins` VALUES (48, '217.186.37.25', 1, 1115479197);
+INSERT INTO `logins` VALUES (49, '217.186.37.25', 1, 1115479700);
+INSERT INTO `logins` VALUES (50, '217.186.42.38', 1, 1115484659);
+INSERT INTO `logins` VALUES (51, '217.186.42.38', 2, 1115484846);
+INSERT INTO `logins` VALUES (52, '217.186.42.38', 1, 1115488288);
+INSERT INTO `logins` VALUES (53, '217.186.42.38', 2, 1115488406);
+INSERT INTO `logins` VALUES (54, '217.186.42.38', 2, 1115490942);
+INSERT INTO `logins` VALUES (55, '84.59.5.140', 4, 1115492226);
+INSERT INTO `logins` VALUES (56, '217.186.41.186', 2, 1115495283);
+INSERT INTO `logins` VALUES (57, '217.186.41.186', 1, 1115495328);
+INSERT INTO `logins` VALUES (58, '217.186.41.186', 2, 1115497210);
+INSERT INTO `logins` VALUES (59, '213.23.153.17', 7, 1115501116);
+INSERT INTO `logins` VALUES (60, '84.59.5.140', 4, 1115501197);
+INSERT INTO `logins` VALUES (61, '84.190.0.199', 3, 1115503119);
+INSERT INTO `logins` VALUES (62, '217.186.41.186', 1, 1115503583);
+INSERT INTO `logins` VALUES (63, '80.185.146.244', 6, 1115504095);
+INSERT INTO `logins` VALUES (64, '217.186.40.166', 1, 1115532186);
+INSERT INTO `logins` VALUES (65, '84.190.0.199', 3, 1115537155);
+INSERT INTO `logins` VALUES (66, '213.23.153.17', 7, 1115537621);
+INSERT INTO `logins` VALUES (67, '84.190.0.199', 3, 1115539763);
+INSERT INTO `logins` VALUES (68, '84.59.48.161', 4, 1115544569);
+INSERT INTO `logins` VALUES (69, '172.177.154.58', 2, 1115545702);
+INSERT INTO `logins` VALUES (70, '217.186.40.166', 1, 1115545709);
+INSERT INTO `logins` VALUES (71, '84.190.0.199', 3, 1115545865);
+INSERT INTO `logins` VALUES (72, '172.177.154.58', 2, 1115546138);
+INSERT INTO `logins` VALUES (73, '172.177.154.58', 2, 1115546352);
+INSERT INTO `logins` VALUES (74, '84.59.48.161', 4, 1115548861);
+INSERT INTO `logins` VALUES (75, '217.186.40.166', 1, 1115549211);
+INSERT INTO `logins` VALUES (76, '84.190.0.199', 3, 1115550079);
+INSERT INTO `logins` VALUES (77, '172.177.154.58', 2, 1115550567);
+INSERT INTO `logins` VALUES (78, '217.186.40.166', 1, 1115550957);
+INSERT INTO `logins` VALUES (79, '172.177.154.58', 2, 1115553034);
+INSERT INTO `logins` VALUES (80, '217.186.40.166', 1, 1115556296);
+INSERT INTO `logins` VALUES (81, '80.185.172.135', 6, 1115558594);
+INSERT INTO `logins` VALUES (82, '172.177.154.58', 2, 1115558725);
+INSERT INTO `logins` VALUES (83, '84.59.48.161', 4, 1115560353);
+INSERT INTO `logins` VALUES (84, '84.190.0.199', 3, 1115561531);
+INSERT INTO `logins` VALUES (85, '84.190.10.202', 3, 1115562177);
+INSERT INTO `logins` VALUES (86, '172.177.154.58', 2, 1115563670);
+INSERT INTO `logins` VALUES (87, '172.177.154.58', 2, 1115563709);
+INSERT INTO `logins` VALUES (88, '172.177.154.58', 2, 1115567061);
+INSERT INTO `logins` VALUES (89, '172.177.154.58', 2, 1115567275);
+INSERT INTO `logins` VALUES (90, '80.185.172.135', 6, 1115567763);
+INSERT INTO `logins` VALUES (91, '82.82.102.209', 7, 1115571979);
+INSERT INTO `logins` VALUES (92, '217.9.32.225', 8, 1115572109);
+INSERT INTO `logins` VALUES (93, '217.9.32.225', 9, 1115572281);
+INSERT INTO `logins` VALUES (94, '172.177.154.58', 2, 1115572305);
+INSERT INTO `logins` VALUES (95, '217.186.38.36', 1, 1115573680);
+INSERT INTO `logins` VALUES (96, '80.185.157.188', 10, 1115574300);
+INSERT INTO `logins` VALUES (97, '80.185.147.60', 10, 1115574838);
+INSERT INTO `logins` VALUES (98, '84.190.10.202', 3, 1115575350);
+INSERT INTO `logins` VALUES (99, '80.185.153.212', 10, 1115575603);
+INSERT INTO `logins` VALUES (100, '217.186.42.217', 1, 1115576482);
+INSERT INTO `logins` VALUES (101, '80.185.171.100', 10, 1115576723);
+INSERT INTO `logins` VALUES (102, '217.186.42.217', 1, 1115577374);
+INSERT INTO `logins` VALUES (103, '172.177.154.58', 2, 1115579293);
+INSERT INTO `logins` VALUES (104, '80.185.157.81', 10, 1115579603);
+INSERT INTO `logins` VALUES (105, '172.177.154.58', 2, 1115579790);
+INSERT INTO `logins` VALUES (106, '172.177.154.58', 2, 1115579873);
+INSERT INTO `logins` VALUES (107, '217.199.68.235', 9, 1115580229);
+INSERT INTO `logins` VALUES (108, '82.82.102.209', 7, 1115582045);
+INSERT INTO `logins` VALUES (109, '172.177.154.58', 2, 1115584308);
+INSERT INTO `logins` VALUES (110, '84.190.10.202', 3, 1115607475);
+INSERT INTO `logins` VALUES (111, '217.186.36.104', 1, 1115612181);
+INSERT INTO `logins` VALUES (112, '172.183.212.181', 2, 1115612960);
+INSERT INTO `logins` VALUES (113, '82.82.204.243', 4, 1115613376);
+INSERT INTO `logins` VALUES (114, '80.185.150.41', 6, 1115613957);
+INSERT INTO `logins` VALUES (115, '84.190.10.202', 3, 1115614306);
+INSERT INTO `logins` VALUES (116, '172.179.144.84', 2, 1115614542);
+INSERT INTO `logins` VALUES (117, '217.199.69.49', 9, 1115616393);
+INSERT INTO `logins` VALUES (118, '82.82.102.209', 7, 1115620483);
+INSERT INTO `logins` VALUES (119, '217.9.32.204', 9, 1115629228);
+INSERT INTO `logins` VALUES (120, '217.9.32.204', 9, 1115631217);
+INSERT INTO `logins` VALUES (121, '217.9.32.204', 9, 1115631599);
+INSERT INTO `logins` VALUES (122, '84.190.62.14', 1, 1115632030);
+INSERT INTO `logins` VALUES (123, '84.190.62.14', 2, 1115632267);
+INSERT INTO `logins` VALUES (124, '84.190.62.14', 3, 1115632504);
+INSERT INTO `logins` VALUES (125, '84.190.62.14', 11, 1115636691);
+INSERT INTO `logins` VALUES (126, '84.190.62.14', 3, 1115636796);
+INSERT INTO `logins` VALUES (127, '84.190.62.14', 11, 1115636925);
+INSERT INTO `logins` VALUES (128, '82.82.192.157', 4, 1115639196);
+INSERT INTO `logins` VALUES (129, '84.190.62.14', 3, 1115640139);
+INSERT INTO `logins` VALUES (130, '84.190.62.14', 1, 1115640212);
+INSERT INTO `logins` VALUES (131, '84.190.62.14', 11, 1115640301);
+INSERT INTO `logins` VALUES (132, '84.190.62.14', 2, 1115640553);
+INSERT INTO `logins` VALUES (133, '84.190.62.14', 11, 1115640690);
+INSERT INTO `logins` VALUES (134, '217.199.78.72', 12, 1115640866);
+INSERT INTO `logins` VALUES (135, '217.199.79.110', 9, 1115641023);
+INSERT INTO `logins` VALUES (136, '80.185.152.242', 10, 1115641165);
+INSERT INTO `logins` VALUES (137, '217.199.78.72', 12, 1115642338);
+INSERT INTO `logins` VALUES (138, '172.177.182.26', 2, 1115642694);
+INSERT INTO `logins` VALUES (139, '217.199.78.72', 12, 1115642826);
+INSERT INTO `logins` VALUES (140, '80.185.144.214', 10, 1115644805);
+INSERT INTO `logins` VALUES (141, '84.190.37.65', 3, 1115645833);
+INSERT INTO `logins` VALUES (142, '82.82.102.231', 7, 1115646051);
+INSERT INTO `logins` VALUES (143, '80.185.144.214', 10, 1115646232);
+INSERT INTO `logins` VALUES (144, '217.199.68.238', 12, 1115647176);
+INSERT INTO `logins` VALUES (145, '80.185.144.214', 10, 1115647487);
+INSERT INTO `logins` VALUES (146, '80.185.188.208', 10, 1115647841);
+INSERT INTO `logins` VALUES (147, '217.199.79.110', 9, 1115648317);
+INSERT INTO `logins` VALUES (148, '217.186.42.125', 1, 1115648869);
+INSERT INTO `logins` VALUES (149, '217.186.42.125', 1, 1115648987);
+INSERT INTO `logins` VALUES (150, '80.185.188.208', 10, 1115649012);
+INSERT INTO `logins` VALUES (151, '217.186.42.125', 1, 1115649059);
+INSERT INTO `logins` VALUES (152, '217.186.42.125', 1, 1115649169);
+INSERT INTO `logins` VALUES (153, '82.82.102.231', 7, 1115649257);
+INSERT INTO `logins` VALUES (154, '217.186.42.125', 1, 1115649342);
+INSERT INTO `logins` VALUES (155, '217.186.42.125', 1, 1115649677);
+INSERT INTO `logins` VALUES (156, '84.190.37.65', 3, 1115653683);
+INSERT INTO `logins` VALUES (157, '217.199.79.110', 12, 1115653767);
+INSERT INTO `logins` VALUES (158, '80.185.150.41', 6, 1115653910);
+INSERT INTO `logins` VALUES (159, '217.199.79.110', 9, 1115653916);
+INSERT INTO `logins` VALUES (160, '84.190.37.65', 3, 1115654097);
+INSERT INTO `logins` VALUES (161, '217.186.37.102', 1, 1115654667);
+INSERT INTO `logins` VALUES (162, '80.185.180.23', 10, 1115655249);
+INSERT INTO `logins` VALUES (163, '217.199.79.110', 9, 1115657066);
+INSERT INTO `logins` VALUES (164, '217.186.37.102', 1, 1115657430);
+INSERT INTO `logins` VALUES (165, '217.186.37.102', 1, 1115657448);
+INSERT INTO `logins` VALUES (166, '172.177.113.134', 2, 1115657517);
+INSERT INTO `logins` VALUES (167, '217.186.37.102', 1, 1115657564);
+INSERT INTO `logins` VALUES (168, '217.186.37.102', 1, 1115657775);
+INSERT INTO `logins` VALUES (169, '172.177.113.134', 2, 1115659283);
+INSERT INTO `logins` VALUES (170, '217.199.68.47', 9, 1115659993);
+INSERT INTO `logins` VALUES (171, '217.186.37.102', 1, 1115660526);
+INSERT INTO `logins` VALUES (172, '217.245.11.87', 11, 1115660574);
+INSERT INTO `logins` VALUES (173, '217.245.11.87', 11, 1115660631);
+INSERT INTO `logins` VALUES (174, '217.245.11.87', 11, 1115660648);
+INSERT INTO `logins` VALUES (175, '217.245.8.68', 11, 1115660745);
+INSERT INTO `logins` VALUES (176, '217.245.8.68', 11, 1115660751);
+INSERT INTO `logins` VALUES (177, '217.245.8.68', 11, 1115660799);
+INSERT INTO `logins` VALUES (178, '217.245.8.68', 11, 1115660811);
+INSERT INTO `logins` VALUES (179, '217.245.8.68', 11, 1115660850);
+INSERT INTO `logins` VALUES (180, '217.245.8.68', 11, 1115660861);
+INSERT INTO `logins` VALUES (181, '84.190.37.65', 3, 1115661664);
+INSERT INTO `logins` VALUES (182, '217.245.10.93', 11, 1115661667);
+INSERT INTO `logins` VALUES (183, '217.9.32.82', 9, 1115661823);
+INSERT INTO `logins` VALUES (184, '217.9.32.82', 12, 1115661922);
+INSERT INTO `logins` VALUES (185, '217.9.32.82', 9, 1115662012);
+INSERT INTO `logins` VALUES (186, '217.245.7.159', 11, 1115663061);
+INSERT INTO `logins` VALUES (187, '217.245.7.159', 11, 1115663074);
+INSERT INTO `logins` VALUES (188, '217.245.7.159', 11, 1115663086);
+INSERT INTO `logins` VALUES (189, '217.245.15.95', 11, 1115663871);
+INSERT INTO `logins` VALUES (190, '217.245.12.159', 11, 1115664194);
+INSERT INTO `logins` VALUES (191, '217.186.37.102', 1, 1115665374);
+INSERT INTO `logins` VALUES (192, '84.190.37.65', 3, 1115666259);
+INSERT INTO `logins` VALUES (193, '172.177.113.134', 2, 1115666292);
+INSERT INTO `logins` VALUES (194, '82.82.102.231', 7, 1115666793);
+INSERT INTO `logins` VALUES (195, '84.190.37.65', 3, 1115667555);
+INSERT INTO `logins` VALUES (196, '84.190.37.65', 3, 1115668145);
+INSERT INTO `logins` VALUES (197, '84.190.37.65', 3, 1115670187);
+INSERT INTO `logins` VALUES (198, '82.82.102.231', 7, 1115670719);
+INSERT INTO `logins` VALUES (199, '172.183.98.59', 2, 1115701688);
+INSERT INTO `logins` VALUES (200, '217.186.41.94', 1, 1115702043);
+INSERT INTO `logins` VALUES (201, '217.9.33.60', 9, 1115702764);
+INSERT INTO `logins` VALUES (202, '217.9.33.60', 12, 1115702954);
+INSERT INTO `logins` VALUES (203, '217.9.33.60', 9, 1115702997);
+INSERT INTO `logins` VALUES (204, '82.82.102.231', 7, 1115703684);
+INSERT INTO `logins` VALUES (205, '172.183.98.59', 2, 1115705409);
+INSERT INTO `logins` VALUES (206, '84.59.39.101', 4, 1115705785);
+INSERT INTO `logins` VALUES (207, '84.190.21.192', 3, 1115705850);
+INSERT INTO `logins` VALUES (208, '84.190.97.165', 11, 1115710383);
+INSERT INTO `logins` VALUES (209, '172.178.186.78', 2, 1115724034);
+INSERT INTO `logins` VALUES (210, '217.199.68.55', 9, 1115726748);
+INSERT INTO `logins` VALUES (211, '172.178.186.78', 2, 1115726918);
+INSERT INTO `logins` VALUES (212, '217.186.37.124', 1, 1115727085);
+INSERT INTO `logins` VALUES (213, '217.199.68.55', 12, 1115727263);
+INSERT INTO `logins` VALUES (214, '217.199.68.55', 9, 1115727304);
+INSERT INTO `logins` VALUES (215, '84.190.21.192', 3, 1115727658);
+INSERT INTO `logins` VALUES (216, '217.88.236.57', 13, 1115727999);
+INSERT INTO `logins` VALUES (217, '217.199.68.55', 9, 1115728181);
+INSERT INTO `logins` VALUES (218, '80.185.153.121', 10, 1115728701);
+INSERT INTO `logins` VALUES (219, '172.178.186.78', 2, 1115728755);
+INSERT INTO `logins` VALUES (220, '84.190.21.192', 3, 1115730484);
+INSERT INTO `logins` VALUES (221, '84.59.61.133', 4, 1115732403);
+INSERT INTO `logins` VALUES (222, '84.190.21.192', 3, 1115733833);
+INSERT INTO `logins` VALUES (223, '84.190.21.192', 3, 1115734834);
+INSERT INTO `logins` VALUES (224, '84.59.54.68', 4, 1115735120);
+INSERT INTO `logins` VALUES (225, '80.185.144.32', 10, 1115737424);
+INSERT INTO `logins` VALUES (226, '80.185.144.32', 10, 1115739480);
+INSERT INTO `logins` VALUES (227, '84.59.54.68', 4, 1115744334);
+INSERT INTO `logins` VALUES (228, '172.180.241.134', 2, 1115744828);
+INSERT INTO `logins` VALUES (229, '172.180.241.134', 2, 1115746062);
+INSERT INTO `logins` VALUES (230, '82.82.95.29', 7, 1115746376);
+INSERT INTO `logins` VALUES (231, '80.185.153.62', 10, 1115748507);
+INSERT INTO `logins` VALUES (232, '82.82.95.29', 7, 1115748956);
+INSERT INTO `logins` VALUES (233, '80.185.158.83', 10, 1115752898);
+INSERT INTO `logins` VALUES (234, '172.180.241.134', 2, 1115755073);
+INSERT INTO `logins` VALUES (235, '82.82.95.29', 7, 1115755602);
+INSERT INTO `logins` VALUES (236, '80.185.147.6', 10, 1115756296);
+INSERT INTO `logins` VALUES (237, '172.180.241.134', 2, 1115757497);
+INSERT INTO `logins` VALUES (238, '84.190.21.192', 3, 1115761873);
+INSERT INTO `logins` VALUES (239, '80.185.147.6', 10, 1115763287);
+INSERT INTO `logins` VALUES (240, '217.199.68.20', 9, 1115764184);
+INSERT INTO `logins` VALUES (241, '84.190.21.192', 3, 1115785950);
+INSERT INTO `logins` VALUES (242, '82.82.207.96', 4, 1115786184);
+INSERT INTO `logins` VALUES (243, '172.183.224.94', 2, 1115787418);
+INSERT INTO `logins` VALUES (244, '82.82.95.29', 7, 1115788647);
+INSERT INTO `logins` VALUES (245, '217.9.33.114', 9, 1115800729);
+INSERT INTO `logins` VALUES (246, '217.9.33.114', 9, 1115802446);
+INSERT INTO `logins` VALUES (247, '217.9.33.114', 9, 1115803394);
+INSERT INTO `logins` VALUES (248, '84.190.65.196', 11, 1115804778);
+INSERT INTO `logins` VALUES (249, '84.190.65.196', 4, 1115804937);
+INSERT INTO `logins` VALUES (250, '84.190.65.196', 2, 1115804976);
+INSERT INTO `logins` VALUES (251, '217.9.33.114', 9, 1115806662);
+INSERT INTO `logins` VALUES (252, '217.9.33.114', 9, 1115808353);
+INSERT INTO `logins` VALUES (253, '80.185.154.24', 10, 1115808435);
+INSERT INTO `logins` VALUES (254, '217.9.33.114', 9, 1115808494);
+INSERT INTO `logins` VALUES (255, '84.190.65.196', 11, 1115808980);
+INSERT INTO `logins` VALUES (256, '80.185.190.55', 10, 1115809227);
+INSERT INTO `logins` VALUES (257, '217.9.33.114', 9, 1115811456);
+INSERT INTO `logins` VALUES (258, '217.9.33.114', 9, 1115814316);
+INSERT INTO `logins` VALUES (259, '82.82.208.167', 4, 1115815429);
+INSERT INTO `logins` VALUES (260, '217.9.33.114', 9, 1115816651);
+INSERT INTO `logins` VALUES (261, '82.82.98.113', 7, 1115816828);
+INSERT INTO `logins` VALUES (262, '80.185.190.55', 10, 1115818396);
+INSERT INTO `logins` VALUES (263, '217.9.33.114', 9, 1115819374);
+INSERT INTO `logins` VALUES (264, '217.9.33.114', 9, 1115821594);
+INSERT INTO `logins` VALUES (265, '84.190.65.196', 1, 1115821675);
+INSERT INTO `logins` VALUES (266, '82.82.208.167', 4, 1115822846);
+INSERT INTO `logins` VALUES (267, '217.9.33.114', 9, 1115824113);
+INSERT INTO `logins` VALUES (268, '84.190.45.123', 3, 1115825272);
+INSERT INTO `logins` VALUES (269, '172.181.57.99', 2, 1115825296);
+INSERT INTO `logins` VALUES (270, '217.9.33.114', 9, 1115826762);
+INSERT INTO `logins` VALUES (271, '82.82.208.167', 4, 1115828793);
+INSERT INTO `logins` VALUES (272, '84.190.45.123', 3, 1115828801);
+INSERT INTO `logins` VALUES (273, '80.185.181.250', 10, 1115830780);
+INSERT INTO `logins` VALUES (274, '80.185.150.90', 10, 1115833091);
+INSERT INTO `logins` VALUES (275, '82.82.208.167', 4, 1115836037);
+INSERT INTO `logins` VALUES (276, '84.190.45.123', 3, 1115836313);
+INSERT INTO `logins` VALUES (277, '80.185.144.191', 10, 1115836658);
+INSERT INTO `logins` VALUES (278, '84.190.45.123', 3, 1115838783);
+INSERT INTO `logins` VALUES (279, '80.185.144.191', 10, 1115839190);
+INSERT INTO `logins` VALUES (280, '82.82.98.113', 7, 1115840375);
+INSERT INTO `logins` VALUES (281, '172.181.57.99', 2, 1115840822);
+INSERT INTO `logins` VALUES (282, '80.185.150.131', 10, 1115841446);
+INSERT INTO `logins` VALUES (283, '172.181.57.99', 2, 1115841891);
+INSERT INTO `logins` VALUES (284, '80.185.151.41', 10, 1115843076);
+INSERT INTO `logins` VALUES (285, '84.190.45.123', 3, 1115844877);
+INSERT INTO `logins` VALUES (286, '80.185.151.194', 10, 1115847751);
+INSERT INTO `logins` VALUES (287, '172.176.34.208', 2, 1115873955);
+INSERT INTO `logins` VALUES (288, '84.59.37.113', 4, 1115878159);
+INSERT INTO `logins` VALUES (289, '84.190.19.169', 3, 1115878434);
+INSERT INTO `logins` VALUES (290, '80.185.156.81', 10, 1115879013);
+INSERT INTO `logins` VALUES (291, '217.9.33.72', 9, 1115879060);
+INSERT INTO `logins` VALUES (292, '217.9.33.72', 9, 1115881540);
+INSERT INTO `logins` VALUES (293, '80.185.146.177', 10, 1115881603);
+INSERT INTO `logins` VALUES (294, '80.185.145.185', 14, 1115882278);
+INSERT INTO `logins` VALUES (295, '80.185.145.185', 10, 1115882354);
+INSERT INTO `logins` VALUES (296, '82.82.98.113', 7, 1115883308);
+INSERT INTO `logins` VALUES (297, '217.9.33.148', 9, 1115893694);
+INSERT INTO `logins` VALUES (298, '84.59.53.246', 4, 1115894718);
+INSERT INTO `logins` VALUES (299, '84.190.19.169', 3, 1115899989);
+INSERT INTO `logins` VALUES (300, '172.181.226.205', 2, 1115903455);
+INSERT INTO `logins` VALUES (301, '84.59.53.246', 4, 1115903728);
+INSERT INTO `logins` VALUES (302, '80.185.178.86', 10, 1115904048);
+INSERT INTO `logins` VALUES (303, '80.185.178.86', 14, 1115904049);
+INSERT INTO `logins` VALUES (304, '217.199.79.106', 9, 1115905170);
+INSERT INTO `logins` VALUES (305, '80.185.178.86', 10, 1115906086);
+INSERT INTO `logins` VALUES (306, '80.185.178.86', 14, 1115906161);
+INSERT INTO `logins` VALUES (307, '217.199.79.106', 7, 1115909285);
+INSERT INTO `logins` VALUES (308, '217.199.79.106', 9, 1115909352);
+INSERT INTO `logins` VALUES (309, '80.185.153.169', 10, 1115909511);
+INSERT INTO `logins` VALUES (310, '82.82.95.129', 7, 1115909550);
+INSERT INTO `logins` VALUES (311, '80.185.153.169', 14, 1115909592);
+INSERT INTO `logins` VALUES (312, '217.199.79.106', 9, 1115911164);
+INSERT INTO `logins` VALUES (313, '80.185.153.169', 10, 1115912635);
+INSERT INTO `logins` VALUES (314, '80.185.153.169', 14, 1115912687);
+INSERT INTO `logins` VALUES (315, '80.185.173.26', 10, 1115915008);
+INSERT INTO `logins` VALUES (316, '84.190.19.169', 3, 1115915032);
+INSERT INTO `logins` VALUES (317, '80.185.173.26', 14, 1115915042);
+INSERT INTO `logins` VALUES (318, '217.186.38.212', 1, 1115918106);
+INSERT INTO `logins` VALUES (319, '80.185.151.213', 10, 1115919624);
+INSERT INTO `logins` VALUES (320, '80.185.151.213', 14, 1115919656);
+INSERT INTO `logins` VALUES (321, '217.199.79.106', 9, 1115921586);
+INSERT INTO `logins` VALUES (322, '172.176.5.202', 2, 1115921725);
+INSERT INTO `logins` VALUES (323, '217.199.79.106', 9, 1115923624);
+INSERT INTO `logins` VALUES (324, '80.185.171.80', 10, 1115923805);
+INSERT INTO `logins` VALUES (325, '80.185.171.80', 14, 1115923909);
+INSERT INTO `logins` VALUES (326, '84.59.3.177', 4, 1115925288);
+INSERT INTO `logins` VALUES (327, '217.199.79.106', 9, 1115926415);
+INSERT INTO `logins` VALUES (328, '80.185.157.15', 10, 1115927981);
+INSERT INTO `logins` VALUES (329, '80.185.157.15', 14, 1115928029);
+INSERT INTO `logins` VALUES (330, '217.199.79.106', 9, 1115928270);
+INSERT INTO `logins` VALUES (331, '82.82.95.129', 7, 1115930292);
+INSERT INTO `logins` VALUES (332, '84.59.3.177', 4, 1115934257);
+INSERT INTO `logins` VALUES (333, '84.59.3.177', 4, 1115934402);
+INSERT INTO `logins` VALUES (334, '84.190.19.169', 3, 1115939506);
+INSERT INTO `logins` VALUES (335, '84.190.19.169', 3, 1115958360);
+INSERT INTO `logins` VALUES (336, '172.176.193.36', 2, 1115958710);
+INSERT INTO `logins` VALUES (337, '80.185.149.29', 10, 1115961281);
+INSERT INTO `logins` VALUES (338, '80.185.149.29', 14, 1115961371);
+INSERT INTO `logins` VALUES (339, '217.199.68.233', 9, 1115961462);
+INSERT INTO `logins` VALUES (340, '82.82.95.129', 7, 1115962201);
+INSERT INTO `logins` VALUES (341, '80.185.154.108', 10, 1115975513);
+INSERT INTO `logins` VALUES (342, '80.185.154.108', 14, 1115975590);
+INSERT INTO `logins` VALUES (343, '82.82.95.129', 7, 1115976483);
+INSERT INTO `logins` VALUES (344, '80.185.154.108', 14, 1115977026);
+INSERT INTO `logins` VALUES (345, '80.185.154.108', 10, 1115977163);
+INSERT INTO `logins` VALUES (346, '80.185.154.108', 14, 1115979438);
+INSERT INTO `logins` VALUES (347, '80.185.154.108', 10, 1115979480);
+INSERT INTO `logins` VALUES (348, '80.185.154.108', 14, 1115981351);
+INSERT INTO `logins` VALUES (349, '80.185.154.108', 10, 1115981391);
+INSERT INTO `logins` VALUES (350, '80.185.154.108', 14, 1115983139);
+INSERT INTO `logins` VALUES (351, '80.185.154.108', 10, 1115983197);
+INSERT INTO `logins` VALUES (352, '82.82.95.129', 7, 1115983225);
+INSERT INTO `logins` VALUES (353, '213.23.156.92', 7, 1115987872);
+INSERT INTO `logins` VALUES (354, '217.199.78.18', 9, 1115989331);
+INSERT INTO `logins` VALUES (355, '80.185.154.108', 10, 1115989530);
+INSERT INTO `logins` VALUES (356, '80.185.154.108', 10, 1115989593);
+INSERT INTO `logins` VALUES (357, '80.185.154.108', 14, 1115989632);
+INSERT INTO `logins` VALUES (358, '84.190.22.92', 3, 1115992766);
+INSERT INTO `logins` VALUES (359, '84.190.22.92', 3, 1115995314);
+INSERT INTO `logins` VALUES (360, '80.185.154.108', 10, 1115997467);
+INSERT INTO `logins` VALUES (361, '80.185.154.108', 14, 1115997565);
+INSERT INTO `logins` VALUES (362, '80.185.153.62', 14, 1115998879);
+INSERT INTO `logins` VALUES (363, '80.185.153.62', 10, 1115998913);
+INSERT INTO `logins` VALUES (364, '84.190.22.92', 3, 1116000396);
+INSERT INTO `logins` VALUES (365, '80.185.155.24', 10, 1116004071);
+INSERT INTO `logins` VALUES (366, '80.185.155.24', 14, 1116004117);
+INSERT INTO `logins` VALUES (367, '84.190.22.92', 3, 1116004341);
+INSERT INTO `logins` VALUES (368, '80.185.179.34', 10, 1116010455);
+INSERT INTO `logins` VALUES (369, '80.185.179.34', 14, 1116010505);
+INSERT INTO `logins` VALUES (370, '80.185.179.34', 10, 1116012643);
+INSERT INTO `logins` VALUES (371, '80.185.179.34', 14, 1116012692);
+INSERT INTO `logins` VALUES (372, '172.177.119.27', 2, 1116016774);
+INSERT INTO `logins` VALUES (373, '217.199.78.199', 9, 1116019576);
+INSERT INTO `logins` VALUES (374, '213.23.156.92', 7, 1116022024);
+INSERT INTO `logins` VALUES (375, '84.190.22.92', 3, 1116022866);
+INSERT INTO `logins` VALUES (376, '80.185.179.34', 10, 1116023147);
+INSERT INTO `logins` VALUES (377, '80.185.179.34', 14, 1116023177);
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `logs`
+-- 
+
+CREATE TABLE `logs` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `type` enum('other','worm_clmoney','worm_blockpc','worm_pcsendmoney','delcluster','deluser','lockuser','badlogin','chclinfo') NOT NULL default 'other',
+  `usr_id` smallint(6) NOT NULL default '0',
+  `payload` tinytext NOT NULL,
+  PRIMARY KEY  (`id`)
+) TYPE=MyISAM AUTO_INCREMENT=69 ;
+
+-- 
+-- Daten für Tabelle `logs`
+-- 
+
+INSERT INTO `logs` VALUES (1, 'badlogin', 0, 'nick=BODY-SNATCHER, pwd=crack4fun');
+INSERT INTO `logs` VALUES (2, 'delcluster', 1, 'BODY-SNATCHER deletes test');
+INSERT INTO `logs` VALUES (17, 'deluser', 5, 'Test martin_steinbrueck@freenet.de self-deleted');
+
+
+
+-- 
+-- Tabellenstruktur für Tabelle `mails`
+-- 
+
+CREATE TABLE `mails` (
+  `mail` bigint(20) NOT NULL auto_increment,
+  `user` smallint(6) default NULL,
+  `user2` smallint(6) default NULL,
+  `user2_name` tinytext NOT NULL,
+  `time` varchar(10) default NULL,
+  `subject` tinytext,
+  `text` text,
+  `box` char(3) default NULL,
+  `xread` char(3) default NULL,
+  PRIMARY KEY  (`mail`)
+) TYPE=MyISAM AUTO_INCREMENT=46 ;
+
+-- 
+-- Tabellenstruktur für Tabelle `pcs`
+-- 
+
+CREATE TABLE `pcs` (
+  `id` smallint(6) NOT NULL auto_increment,
+  `name` tinytext,
+  `ip` varchar(7) default NULL,
+  `owner` smallint(6) default NULL,
+  `owner_name` tinytext,
+  `owner_points` int(11) default NULL,
+  `owner_cluster` smallint(6) default NULL,
+  `owner_cluster_code` tinytext,
+  `cpu` varchar(4) NOT NULL default '',
+  `ram` tinyint(4) default NULL,
+  `lan` varchar(4) default NULL,
+  `mm` varchar(4) default NULL,
+  `bb` varchar(4) default NULL,
+  `ads` char(1) default NULL,
+  `dialer` char(1) default NULL,
+  `auctions` char(1) default NULL,
+  `bankhack` char(1) default NULL,
+  `fw` varchar(4) default NULL,
+  `mk` varchar(4) default NULL,
+  `av` varchar(4) default NULL,
+  `ids` varchar(4) default NULL,
+  `ips` varchar(4) default NULL,
+  `rh` varchar(4) default NULL,
+  `sdk` varchar(4) default NULL,
+  `trojan` varchar(4) default NULL,
+  `credits` int(11) default NULL,
+  `lmupd` varchar(10) default NULL,
+  `country` enum('afghanistan','antarktis','antigua','argentinien','australien','austria','brasilien','china','deutschland','egypt','england','finnland','frankreich','griechenland','groenland','indien','irak','iran','irland','island','italien','japan','kanada','kuba','lybien','madagaskar','mexico','monaco','namibia','neuseeland','nordkorea','pakistan','peru','portugal','quatar','russland','saudi-arabien','schweden','schweiz','sierraleone','spanien','suedafrika','thailand','tuerkei','usa','vanuatu','vietnam','marlboro','atlantis','myth') NOT NULL default 'myth',
+  `points` smallint(6) default NULL,
+  `la` varchar(10) default NULL,
+  `buildstat` tinytext,
+  `di` varchar(10) default NULL,
+  `dt` varchar(10) default NULL,
+  `lrh` varchar(10) default NULL,
+  `blocked` varchar(10) default NULL,
+  PRIMARY KEY  (`id`)
+) TYPE=MyISAM AUTO_INCREMENT=6231 ;
+
+
+
+-- 
+-- Tabellenstruktur für Tabelle `rank_clusters`
+-- 
+
+CREATE TABLE `rank_clusters` (
+  `platz` smallint(6) NOT NULL auto_increment,
+  `cluster` smallint(6) default '0',
+  `members` tinyint(4) default '0',
+  `points` int(11) default '0',
+  `av_points` float default '0',
+  `pcs` mediumint(9) default '0',
+  `av_pcs` float default '0',
+  `success_rate` float default '0',
+  PRIMARY KEY  (`platz`)
+) TYPE=MyISAM AUTO_INCREMENT=7 ;
+
+-- 
+-- Daten für Tabelle `rank_clusters`
+-- 
+
+INSERT INTO `rank_clusters` VALUES (1, 6, 1, 23686, 23686, 30, 30, 90.9664);
+INSERT INTO `rank_clusters` VALUES (2, 4, 2, 18690, 9345, 22, 11, 92.5403);
+INSERT INTO `rank_clusters` VALUES (3, 5, 1, 5533, 5533, 8, 8, 51.3393);
+INSERT INTO `rank_clusters` VALUES (4, 8, 1, 2048, 2048, 2, 2, 0);
+INSERT INTO `rank_clusters` VALUES (5, 3, 1, 1775, 1775, 3, 3, 73.3333);
+INSERT INTO `rank_clusters` VALUES (6, 7, 2, 1549, 774.5, 2, 1, 15);
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `rank_users`
+-- 
+
+CREATE TABLE `rank_users` (
+  `platz` smallint(6) NOT NULL auto_increment,
+  `id` smallint(6) default NULL,
+  `name` varchar(50) default NULL,
+  `points` int(11) default '0',
+  `cluster` smallint(6) default NULL,
+  PRIMARY KEY  (`platz`)
+) TYPE=MyISAM AUTO_INCREMENT=13 ;
+
+-- 
+-- Daten für Tabelle `rank_users`
+-- 
+
+INSERT INTO `rank_users` VALUES (1, 3, 'SournoisIntrus', 23686, 6);
+INSERT INTO `rank_users` VALUES (2, 2, 'MCS1408', 16642, 4);
+INSERT INTO `rank_users` VALUES (3, 9, 'Queribus', 5533, 5);
+INSERT INTO `rank_users` VALUES (4, 1, 'BODY-SNATCHER', 2048, 8);
+INSERT INTO `rank_users` VALUES (5, 4, 'mEgAfAnTa', 2048, 4);
+INSERT INTO `rank_users` VALUES (6, 7, 'GoldenEye', 1775, 3);
+INSERT INTO `rank_users` VALUES (7, 10, 'Franco', 882, 7);
+INSERT INTO `rank_users` VALUES (8, 14, 'RufusMalibu', 667, 7);
+INSERT INTO `rank_users` VALUES (9, 6, 'Stoppelhopser', 341, 0);
+INSERT INTO `rank_users` VALUES (10, 12, 'Timotheus', 310, 0);
+INSERT INTO `rank_users` VALUES (11, 11, 'lehnin', 207, 0);
+INSERT INTO `rank_users` VALUES (12, 13, 'Aragus', 24, 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `sysmsgs`
+-- 
+
+CREATE TABLE `sysmsgs` (
+  `msg` int(11) NOT NULL auto_increment,
+  `user` smallint(6) default NULL,
+  `time` varchar(10) default NULL,
+  `text` text,
+  `xread` char(3) default NULL,
+  PRIMARY KEY  (`msg`)
+) TYPE=MyISAM AUTO_INCREMENT=194 ;
+
+-- 
+-- Daten für Tabelle `sysmsgs`
+-- 
+
+INSERT INTO `sysmsgs` VALUES (183, 4, '1115926979', '4 Mitglieder des Clusters [cluster=5]KDVR[/cluster] haben eine Distributed Attack gegen dich ausgef&uuml;hrt!<br />Sie konnte aber abgewehrt werden: Auf deinem PC 10.47.80.2 (SchuGga) gab es keinen Schaden!', 'yes');
+INSERT INTO `sysmsgs` VALUES (52, 9, '1115737846', '<b>Spionage-Bericht von 10.47.80.1</b> Besitzer: [usr=4]mEgAfAnTa[/usr]<br />\r\n    Prozessor = 4400 Mhz,<br />Arbeitsspeicher = 4096 MB RAM,<br /> MoneyMarket = v10,<br /> BucksBunker = v2.5,<br />\r\n    Firewall = v0,<br /> Anti-Virus-Programm = v10,<br /> IDS = v8.5,<br />\r\n    IPS = v2.5,<br /> Malware Kit = v10,<br /> Trojaner = v3.5,<br /> SDK = v5,<br />\r\n    Remote Hijack = v1,<br /> Distributed Attack = 0', 'no');
+INSERT INTO `sysmsgs` VALUES (54, 9, '1115739801', 'Es wurde erfolglos versucht, Geld von deinem Rechner 10.47.101.128 (Pjöngjang) zu klauen!<br />Der Angreifer konnte als [usr=10]Franco[/usr] identifiziert werden!', 'no');
+INSERT INTO `sysmsgs` VALUES (56, 4, '1115741026', 'Es wurde versucht Anti-Virus-Programm auf deinem PC 10.47.80.1 (dRp3pP3r) zu blockieren. Der Angriff konnte aber abgeblockt werden!<br />Der Angreifer konnte als [usr=9]Queribus[/usr] identifiziert werden!', 'yes');
+INSERT INTO `sysmsgs` VALUES (57, 4, '1115743412', 'Es wurde erfolglos versucht, Geld von deinem Rechner 10.47.80.1 (dRp3pP3r) zu klauen!<br />Der Angreifer konnte als [usr=9]Queribus[/usr] identifiziert werden!', 'yes');
+INSERT INTO `sysmsgs` VALUES (58, 4, '1115747541', '<b>Spionage-Bericht von 10.47.80.2</b> Besitzer: [usr=][/usr]<br />\r\n    Prozessor = 4000 Mhz,<br />Arbeitsspeicher = 256 MB RAM,<br /> MoneyMarket = v5,<br /> BucksBunker = v5,<br />\r\n    Firewall = v10,<br /> Anti-Virus-Programm = v3,<br /> IDS = v1,<br />\r\n    IPS = v1,<br /> Malware Kit = v8,<br /> Trojaner = v3,<br /> SDK = v5,<br />\r\n    Remote Hijack = v0,<br /> Distributed Attack = 0', 'yes');
+INSERT INTO `sysmsgs` VALUES (118, 4, '1115825581', 'Auf deinen Rechner 10.47.80.2 (SchuGga) wurde ein Spionage-Angriff ver&uuml;bt!<br />Er war erfolgreich!<br />Der Feind konnte als [usr=9]Queribus[/usr] identifiziert werden!', 'yes');
+INSERT INTO `sysmsgs` VALUES (119, 9, '1115825581', '<b>Spionage-Bericht von 10.47.80.2</b> Besitzer: [usr=4]mEgAfAnTa[/usr]<br />\r\n    Prozessor = 4000 Mhz,<br />Arbeitsspeicher = 4096 MB RAM,<br /> MoneyMarket = v10,<br /> BucksBunker = v5,<br />\r\n    Firewall = v10,<br /> Anti-Virus-Programm = v10,<br /> IDS = v8,<br />\r\n    IPS = v3.5,<br /> Malware Kit = v10,<br /> Trojaner = v5,<br /> SDK = v5,<br />\r\n    Remote Hijack = v0,<br /> Distributed Attack = 1', 'no');
+INSERT INTO `sysmsgs` VALUES (60, 7, '1115749021', '<b>Spionage-Bericht von 10.47.102.4</b> Besitzer: [usr=][/usr]<br />\r\n    Prozessor = 800 Mhz,<br />Arbeitsspeicher = 2048 MB RAM,<br /> MoneyMarket = v6,<br /> BucksBunker = v5,<br />\r\n    Firewall = v0,<br /> Anti-Virus-Programm = v0,<br /> IDS = v0,<br />\r\n    IPS = v0,<br /> Malware Kit = v0,<br /> Trojaner = v0,<br /> SDK = v0,<br />\r\n    Remote Hijack = v0,<br /> Distributed Attack = 0', 'yes');
+INSERT INTO `sysmsgs` VALUES (184, 9, '1115926979', 'Die Distributed Attack auf 10.47.80.2 (Besitzer: [usr=4]mEgAfAnTa[/usr]), an der du teilgenommen hast, war leider nicht erfolgreich!', 'no');
+INSERT INTO `sysmsgs` VALUES (53, 4, '1115738843', 'Es wurde versucht Anti-Virus-Programm auf deinem PC 10.47.80.1 (dRp3pP3r) zu blockieren. Der Angriff konnte aber abgeblockt werden!<br />Der Angreifer konnte als [usr=9]Queribus[/usr] identifiziert werden!', 'yes');
+INSERT INTO `sysmsgs` VALUES (55, 4, '1115740020', 'Es wurde versucht Anti-Virus-Programm auf deinem PC 10.47.80.1 (dRp3pP3r) zu blockieren. Der Angriff konnte aber abgeblockt werden!<br />Der Angreifer konnte als [usr=9]Queribus[/usr] identifiziert werden!', 'yes');
+INSERT INTO `sysmsgs` VALUES (113, 4, '1115818135', 'Es wurde erfolglos versucht, Geld von deinem Rechner 10.47.80.1 (dRp3pP3r) zu klauen!<br />Der Angreifer konnte als [usr=9]Queribus[/usr] identifiziert werden!', 'yes');
+INSERT INTO `sysmsgs` VALUES (114, 4, '1115819745', 'Es wurde erfolglos versucht, Geld von deinem Rechner 10.47.80.1 (dRp3pP3r) zu klauen!<br />Der Angreifer konnte als [usr=9]Queribus[/usr] identifiziert werden!', 'yes');
+INSERT INTO `sysmsgs` VALUES (115, 4, '1115822328', 'Es wurde erfolglos versucht, Geld von deinem Rechner 10.47.80.1 (dRp3pP3r) zu klauen!<br />Der Angreifer konnte als [usr=9]Queribus[/usr] identifiziert werden!', 'yes');
+INSERT INTO `sysmsgs` VALUES (164, 9, '1115879154', '<b>Spionage-Bericht von 10.47.84.128</b> Besitzer: [usr=10]Franco[/usr]<br />\r\n    Prozessor = 4000 Mhz,<br />Arbeitsspeicher = 4096 MB RAM,<br /> MoneyMarket = v10,<br /> BucksBunker = v5,<br />\r\n    Firewall = v10,<br /> Anti-Virus-Programm = v10,<br /> IDS = v0,<br />\r\n    IPS = v0,<br /> Malware Kit = v10,<br /> Trojaner = v5,<br /> SDK = v5,<br />\r\n    Remote Hijack = v6,<br /> Distributed Attack = 1', 'no');
+INSERT INTO `sysmsgs` VALUES (165, 10, '1115879724', 'Auf deinen PC 10.47.84.128 (Sevilla) wurde ein erfolgreicher Angriff ver&uuml;bt: Anti-Virus-Programm ist blockiert bis 10:05 Uhr!<br />Der Angreifer konnte leider nicht identifiziert werden!', 'yes');
+INSERT INTO `sysmsgs` VALUES (166, 10, '1115880280', 'Dein PC 10.47.84.128 (Sevilla) wurde von einem feindlichen User &uuml;bernommen!<br />Der Angreifer konnte anonym bleiben!', 'yes');
+INSERT INTO `sysmsgs` VALUES (109, 9, '1115807112', '<b>Spionage-Bericht von 10.47.80.1</b> Besitzer: [usr=4]mEgAfAnTa[/usr]<br />\r\n    Prozessor = 4400 Mhz,<br />Arbeitsspeicher = 4096 MB RAM,<br /> MoneyMarket = v10,<br /> BucksBunker = v2.5,<br />\r\n    Firewall = v10,<br /> Anti-Virus-Programm = v10,<br /> IDS = v10,<br />\r\n    IPS = v5,<br /> Malware Kit = v10,<br /> Trojaner = v5,<br /> SDK = v5,<br />\r\n    Remote Hijack = v8.5,<br /> Distributed Attack = 1', 'no');
+INSERT INTO `sysmsgs` VALUES (116, 4, '1115823056', 'Es wurde erfolglos versucht, Geld von deinem Rechner 10.47.80.1 (dRp3pP3r) zu klauen!<br />Der Angreifer konnte als [usr=9]Queribus[/usr] identifiziert werden!', 'yes');
+INSERT INTO `sysmsgs` VALUES (117, 4, '1115824252', 'Auf deinen PC 10.47.80.1 (dRp3pP3r) wurde ein SMASH-Angriff ver&uuml;bt! Er konnte aber abgewehrt werden!Der Angreifer konnte als [usr=9]Queribus[/usr] identifiziert werden!', 'yes');
+INSERT INTO `sysmsgs` VALUES (59, 4, '1115747681', 'Dein Aufnahmeantrag in den Cluster [cluster=4]DK[/cluster] wurde angenommen!<br />Klicke <a href="cluster.php?sid=%sid%&page=join&cluster=4">hier</a> um deinen jetzigen Cluster zu verlassen und DK beizutreten.', 'yes');
+INSERT INTO `sysmsgs` VALUES (193, 14, '1116019975', 'Es wurde versucht, deinen PC 10.47.78.128 (NoName) zu &uuml;bernehmen! Der Angriff schlug fehl!<br />Der Angreifer konnte als [usr=9]Queribus[/usr] identifiziert werden!', 'no');
+INSERT INTO `sysmsgs` VALUES (168, 14, '1115904147', 'Dein Aufnahmeantrag in den Cluster [cluster=7]BdC[/cluster] wurde angenommen!<br />Klicke <a href="cluster.php?sid=%sid%&page=join&cluster=7">hier</a> um deinen jetzigen Cluster zu verlassen und BdC beizutreten.', 'yes');
+INSERT INTO `sysmsgs` VALUES (107, 9, '1115802145', 'Die Distributed Attack auf 10.47.84.128 (Besitzer: [usr=10]Franco[/usr]), an der du teilgenommen hast, war leider nicht erfolgreich!', 'no');
+INSERT INTO `sysmsgs` VALUES (108, 4, '1115807112', 'Auf deinen Rechner 10.47.80.1 (dRp3pP3r) wurde ein Spionage-Angriff ver&uuml;bt!<br />Er war erfolgreich!<br />Der Feind konnte als [usr=9]Queribus[/usr] identifiziert werden!', 'yes');
+INSERT INTO `sysmsgs` VALUES (110, 4, '1115808437', 'Auf deinen PC 10.47.80.1 (dRp3pP3r) wurde ein SMASH-Angriff ver&uuml;bt! Er konnte aber abgewehrt werden!Der Angreifer konnte als [usr=9]Queribus[/usr] identifiziert werden!', 'yes');
+INSERT INTO `sysmsgs` VALUES (170, 9, '1115922793', '<b>Spionage-Bericht von 10.47.101.125</b> Besitzer: [usr=][/usr]<br />\r\n    Prozessor = 3200 Mhz,<br />Arbeitsspeicher = 1024 MB RAM,<br /> MoneyMarket = v10,<br /> BucksBunker = v10,<br />\r\n    Firewall = v3,<br /> Anti-Virus-Programm = v9,<br /> IDS = v1,<br />\r\n    IPS = v10,<br /> Malware Kit = v6,<br /> Trojaner = v3,<br /> SDK = v3,<br />\r\n    Remote Hijack = v0,<br /> Distributed Attack = 0', 'no');
+INSERT INTO `sysmsgs` VALUES (162, 9, '1115833336', 'Es wurde erfolglos versucht, Geld von deinem Rechner 10.47.101.128 (Pjöngjang) zu klauen!<br />Der Angreifer konnte als [usr=10]Franco[/usr] identifiziert werden!', 'no');
+INSERT INTO `sysmsgs` VALUES (191, 14, '1116019657', 'Es wurde versucht, deinen PC 10.47.78.128 (NoName) zu &uuml;bernehmen! Der Angriff schlug fehl!<br />Der Angreifer konnte als [usr=9]Queribus[/usr] identifiziert werden!', 'no');
+INSERT INTO `sysmsgs` VALUES (87, 9, '1115764398', '<b>Spionage-Bericht von 10.47.80.2</b> Besitzer: [usr=4]mEgAfAnTa[/usr]<br />\r\n    Prozessor = 4000 Mhz,<br />Arbeitsspeicher = 256 MB RAM,<br /> MoneyMarket = v8.5,<br /> BucksBunker = v5,<br />\r\n    Firewall = v10,<br /> Anti-Virus-Programm = v3,<br /> IDS = v1,<br />\r\n    IPS = v1,<br /> Malware Kit = v8,<br /> Trojaner = v3,<br /> SDK = v5,<br />\r\n    Remote Hijack = v0,<br /> Distributed Attack = 0', 'no');
+INSERT INTO `sysmsgs` VALUES (192, 14, '1116019833', 'Auf deinen PC 10.47.78.128 (NoName) wurde ein erfolgreicher Angriff ver&uuml;bt: Firewall ist blockiert bis morgen 01:00 Uhr!<br />Der Angreifer konnte leider nicht identifiziert werden!', 'no');
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `transfers`
+-- 
+
+CREATE TABLE `transfers` (
+  `from_id` smallint(6) default '0',
+  `from_type` enum('cluster','user') NOT NULL default 'cluster',
+  `from_usr` smallint(6) default NULL,
+  `to_id` smallint(6) default '0',
+  `to_type` enum('cluster','user') NOT NULL default 'cluster',
+  `to_usr` smallint(6) default NULL,
+  `credits` bigint(11) default '0',
+  `time` varchar(10) default NULL
+) TYPE=MyISAM;
+
+-- 
+-- Daten für Tabelle `transfers`
+-- 
+
+INSERT INTO `transfers` VALUES (1, 'user', 1, 395, 'user', 1, 10000, '1115551935');
+INSERT INTO `transfers` VALUES (1, 'user', 1, 395, 'user', 1, 5000, '1115556239');
+INSERT INTO `transfers` VALUES (1, 'user', 1, 395, 'user', 1, 2000, '1115563484');
+INSERT INTO `transfers` VALUES (1, 'user', 1, 395, 'user', 1, 10000, '1115566760');
+INSERT INTO `transfers` VALUES (3, 'user', 3, 3562, 'user', 3, 17000, '1115607419');
+INSERT INTO `transfers` VALUES (3, 'user', 3, 3562, 'user', 3, 20000, '1115614422');
+INSERT INTO `transfers` VALUES (3, 'user', 3, 3563, 'user', 3, 100000, '1115667289');
+INSERT INTO `transfers` VALUES (3562, 'user', 3, 3563, 'user', 3, 100000, '1115667332');
+INSERT INTO `transfers` VALUES (2, 'user', 2, 4969, 'user', 2, 50000, '1115668113');
+INSERT INTO `transfers` VALUES (3, 'user', 3, 3564, 'user', 3, 100000, '1115672981');
+INSERT INTO `transfers` VALUES (2, 'user', 2, 5001, 'user', 2, 80000, '1115705243');
+INSERT INTO `transfers` VALUES (3, 'user', 3, 3564, 'user', 3, 60000, '1115707580');
+INSERT INTO `transfers` VALUES (2, 'user', 2, 4969, 'user', 2, 100000, '1115726991');
+INSERT INTO `transfers` VALUES (3, 'user', 3, 3562, 'user', 3, 50000, '1115728656');
+INSERT INTO `transfers` VALUES (3562, 'user', 3, 3567, 'user', 3, 30000, '1115728946');
+INSERT INTO `transfers` VALUES (3565, 'user', 3, 3565, 'user', 3, 50000, '1115730672');
+INSERT INTO `transfers` VALUES (3565, 'user', 3, 3566, 'user', 3, 50000, '1115730713');
+INSERT INTO `transfers` VALUES (4969, 'user', 2, 5001, 'user', 2, 60000, '1115733904');
+INSERT INTO `transfers` VALUES (4969, 'user', 2, 5001, 'user', 2, 5000, '1115734883');
+INSERT INTO `transfers` VALUES (2, 'user', 2, 5001, 'user', 2, 30000, '1115734898');
+INSERT INTO `transfers` VALUES (6225, 'user', 9, 4190, 'user', 9, 15000, '1115737697');
+INSERT INTO `transfers` VALUES (3, 'user', 3, 3567, 'user', 3, 50000, '1115747290');
+INSERT INTO `transfers` VALUES (3562, 'user', 3, 3563, 'user', 3, 100000, '1115750675');
+INSERT INTO `transfers` VALUES (4, 'user', 4, 4703, 'user', 4, 48555, '1115752803');
+INSERT INTO `transfers` VALUES (4969, 'user', 2, 5001, 'user', 2, 60000, '1115752926');
+INSERT INTO `transfers` VALUES (2, 'user', 2, 5054, 'user', 2, 90000, '1115754864');
+INSERT INTO `transfers` VALUES (4969, 'user', 2, 5001, 'user', 2, 9700, '1115754947');
+INSERT INTO `transfers` VALUES (2, 'user', 2, 5001, 'user', 2, 8000, '1115755200');
+INSERT INTO `transfers` VALUES (2, 'user', 2, 5001, 'user', 2, 25900, '1115755284');
+INSERT INTO `transfers` VALUES (3, 'user', 3, 3563, 'user', 3, 50000, '1115755426');
+INSERT INTO `transfers` VALUES (3, 'user', 3, 3564, 'user', 3, 50000, '1115755439');
+INSERT INTO `transfers` VALUES (3, 'user', 3, 3565, 'user', 3, 50000, '1115755452');
+INSERT INTO `transfers` VALUES (3, 'user', 3, 3565, 'user', 3, 50000, '1115755465');
+INSERT INTO `transfers` VALUES (3, 'user', 3, 3566, 'user', 3, 50000, '1115755482');
+INSERT INTO `transfers` VALUES (3562, 'user', 3, 3567, 'user', 3, 40000, '1115755521');
+INSERT INTO `transfers` VALUES (2, 'user', 2, 5001, 'user', 2, 2200, '1115756414');
+INSERT INTO `transfers` VALUES (4969, 'user', 2, 5001, 'user', 2, 2969, '1115756445');
+INSERT INTO `transfers` VALUES (2, 'user', 2, 4980, 'user', 2, 60000, '1115787796');
+INSERT INTO `transfers` VALUES (4969, 'user', 2, 2, 'user', 2, 10000, '1115788658');
+INSERT INTO `transfers` VALUES (2, 'user', 2, 5006, 'user', 2, 4800, '1115789199');
+INSERT INTO `transfers` VALUES (4969, 'user', 2, 5006, 'user', 2, 1800, '1115789212');
+INSERT INTO `transfers` VALUES (3, 'user', 3, 6, 'cluster', 0, 499867, '1115827855');
+INSERT INTO `transfers` VALUES (3, 'user', 3, 6, 'cluster', 0, 130, '1115827892');
+INSERT INTO `transfers` VALUES (2, 'user', 2, 5006, 'user', 2, 65000, '1115828055');
+INSERT INTO `transfers` VALUES (4969, 'user', 2, 5054, 'user', 2, 65000, '1115828169');
+INSERT INTO `transfers` VALUES (5031, 'user', 2, 4983, 'user', 2, 50000, '1115829651');
+INSERT INTO `transfers` VALUES (5031, 'user', 2, 4980, 'user', 2, 20000, '1115831118');
+INSERT INTO `transfers` VALUES (5031, 'user', 2, 5066, 'user', 2, 20000, '1115831130');
+INSERT INTO `transfers` VALUES (4969, 'user', 2, 4980, 'user', 2, 70000, '1115834947');
+INSERT INTO `transfers` VALUES (5030, 'user', 2, 5006, 'user', 2, 75000, '1115841074');
+INSERT INTO `transfers` VALUES (5030, 'user', 2, 5066, 'user', 2, 75000, '1115841087');
+INSERT INTO `transfers` VALUES (2, 'user', 2, 4983, 'user', 2, 33000, '1115841176');
+INSERT INTO `transfers` VALUES (4969, 'user', 2, 5066, 'user', 2, 20000, '1115841772');
+INSERT INTO `transfers` VALUES (3562, 'user', 3, 3567, 'user', 3, 100000, '1115841914');
+INSERT INTO `transfers` VALUES (3562, 'user', 3, 3568, 'user', 3, 100000, '1115841926');
+INSERT INTO `transfers` VALUES (3563, 'user', 3, 5, 'user', 3, 100000, '1115841955');
+INSERT INTO `transfers` VALUES (3563, 'user', 3, 3566, 'user', 3, 100000, '1115841965');
+INSERT INTO `transfers` VALUES (3562, 'user', 3, 3564, 'user', 3, 100000, '1115842002');
+INSERT INTO `transfers` VALUES (3562, 'user', 3, 3569, 'user', 3, 100000, '1115844702');
+INSERT INTO `transfers` VALUES (2, 'user', 2, 5031, 'user', 2, 72500, '1115878656');
+INSERT INTO `transfers` VALUES (4969, 'user', 2, 4983, 'user', 2, 73300, '1115878682');
+INSERT INTO `transfers` VALUES (6225, 'user', 9, 4191, 'user', 9, 50000, '1115881450');
+INSERT INTO `transfers` VALUES (4, 'user', 4, 4703, 'user', 4, 100000, '1115897119');
+INSERT INTO `transfers` VALUES (3562, 'user', 3, 3572, 'user', 3, 100000, '1115900233');
+INSERT INTO `transfers` VALUES (3, 'user', 3, 3568, 'user', 3, 50000, '1115917205');
+INSERT INTO `transfers` VALUES (3, 'user', 3, 6, 'cluster', 0, 299871, '1115917226');
+INSERT INTO `transfers` VALUES (3562, 'user', 3, 6, 'cluster', 0, 100130, '1115917296');
+INSERT INTO `transfers` VALUES (3562, 'user', 3, 3568, 'user', 3, 35000, '1115920003');
+INSERT INTO `transfers` VALUES (3564, 'user', 3, 6, 'cluster', 0, 200000, '1115920416');
+INSERT INTO `transfers` VALUES (3563, 'user', 3, 6, 'cluster', 0, 100000, '1115920453');
+INSERT INTO `transfers` VALUES (3565, 'user', 3, 6, 'cluster', 0, 100000, '1115920509');
+INSERT INTO `transfers` VALUES (3, 'user', 3, 3573, 'user', 3, 50000, '1115920792');
+INSERT INTO `transfers` VALUES (3, 'user', 3, 3576, 'user', 3, 47000, '1115920805');
+INSERT INTO `transfers` VALUES (2, 'user', 2, 4980, 'user', 2, 80000, '1115921996');
+INSERT INTO `transfers` VALUES (4969, 'user', 2, 4964, 'user', 2, 80000, '1115922078');
+INSERT INTO `transfers` VALUES (5001, 'user', 2, 4966, 'user', 2, 50000, '1115922759');
+INSERT INTO `transfers` VALUES (5001, 'user', 2, 4962, 'user', 2, 50000, '1115923362');
+INSERT INTO `transfers` VALUES (3567, 'user', 3, 3579, 'user', 3, 50000, '1115923781');
+INSERT INTO `transfers` VALUES (5001, 'user', 2, 4967, 'user', 2, 80000, '1115923819');
+INSERT INTO `transfers` VALUES (5054, 'user', 2, 4968, 'user', 2, 50000, '1115924209');
+INSERT INTO `transfers` VALUES (5054, 'user', 2, 4968, 'user', 2, 51000, '1115924283');
+INSERT INTO `transfers` VALUES (2, 'user', 2, 4968, 'user', 2, 500, '1115924306');
+INSERT INTO `transfers` VALUES (3563, 'user', 3, 6, 'cluster', 0, 300000, '1115927354');
+INSERT INTO `transfers` VALUES (5066, 'user', 2, 4962, 'user', 2, 76000, '1115927803');
+INSERT INTO `transfers` VALUES (2, 'user', 2, 4962, 'user', 2, 6800, '1115927857');
+INSERT INTO `transfers` VALUES (5030, 'user', 2, 4964, 'user', 2, 116900, '1115927914');
+INSERT INTO `transfers` VALUES (4964, 'user', 2, 4965, 'user', 2, 65000, '1115927963');
+INSERT INTO `transfers` VALUES (4964, 'user', 2, 4966, 'user', 2, 37000, '1115928186');
+INSERT INTO `transfers` VALUES (4980, 'user', 2, 4967, 'user', 2, 53000, '1115928263');
+INSERT INTO `transfers` VALUES (4969, 'user', 2, 4968, 'user', 2, 8200, '1115928353');
+INSERT INTO `transfers` VALUES (4962, 'user', 2, 4968, 'user', 2, 3000, '1115928409');
+INSERT INTO `transfers` VALUES (2, 'user', 2, 4968, 'user', 2, 1111, '1115928425');
+INSERT INTO `transfers` VALUES (3565, 'user', 3, 3569, 'user', 3, 90000, '1115928503');
+INSERT INTO `transfers` VALUES (5054, 'user', 2, 4962, 'user', 2, 10000, '1115928571');
+INSERT INTO `transfers` VALUES (5006, 'user', 2, 4964, 'user', 2, 50000, '1115928777');
+INSERT INTO `transfers` VALUES (4962, 'user', 2, 4966, 'user', 2, 4000, '1115928817');
+INSERT INTO `transfers` VALUES (4962, 'user', 2, 4964, 'user', 2, 1200, '1115928848');
+INSERT INTO `transfers` VALUES (2, 'user', 2, 4964, 'user', 2, 60000, '1115959913');
+INSERT INTO `transfers` VALUES (5030, 'user', 2, 5006, 'user', 2, 60000, '1115960077');
+INSERT INTO `transfers` VALUES (4969, 'user', 2, 4966, 'user', 2, 60000, '1115960282');
+INSERT INTO `transfers` VALUES (4980, 'user', 2, 4962, 'user', 2, 20000, '1115960326');
+INSERT INTO `transfers` VALUES (4980, 'user', 2, 4968, 'user', 2, 20000, '1115960411');
+INSERT INTO `transfers` VALUES (4980, 'user', 2, 4965, 'user', 2, 20000, '1115960455');
+INSERT INTO `transfers` VALUES (5001, 'user', 2, 4971, 'user', 2, 83000, '1115960568');
+INSERT INTO `transfers` VALUES (7, 'user', 7, 5845, 'user', 7, 100000, '1115971752');
+INSERT INTO `transfers` VALUES (3, 'user', 3, 5, 'user', 3, 10000, '1115994325');
+INSERT INTO `transfers` VALUES (3, 'user', 3, 6, 'cluster', 0, 100000, '1115995483');
+INSERT INTO `transfers` VALUES (3563, 'user', 3, 3586, 'user', 3, 150000, '1115995593');
+INSERT INTO `transfers` VALUES (3562, 'user', 3, 6, 'cluster', 0, 200000, '1115995729');
+INSERT INTO `transfers` VALUES (3564, 'user', 3, 3574, 'user', 3, 100000, '1116000802');
+INSERT INTO `transfers` VALUES (3565, 'user', 3, 3582, 'user', 3, 10000, '1116000827');
+INSERT INTO `transfers` VALUES (3565, 'user', 3, 3582, 'user', 3, 90000, '1116000844');
+INSERT INTO `transfers` VALUES (3566, 'user', 3, 3588, 'user', 3, 100000, '1116000894');
+INSERT INTO `transfers` VALUES (3564, 'user', 3, 6, 'cluster', 0, 100000, '1116004760');
+INSERT INTO `transfers` VALUES (3568, 'user', 3, 6, 'cluster', 0, 100000, '1116004791');
+INSERT INTO `transfers` VALUES (3567, 'user', 3, 6, 'cluster', 0, 100000, '1116004819');
+INSERT INTO `transfers` VALUES (3569, 'user', 3, 6, 'cluster', 0, 100000, '1116004848');
+INSERT INTO `transfers` VALUES (3571, 'user', 3, 6, 'cluster', 0, 100000, '1116004870');
+INSERT INTO `transfers` VALUES (2, 'user', 2, 4970, 'user', 2, 100000, '1116017867');
+INSERT INTO `transfers` VALUES (4969, 'user', 2, 4957, 'user', 2, 100000, '1116019676');
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `upgrades`
+-- 
+
+CREATE TABLE `upgrades` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `pc` smallint(6) NOT NULL default '0',
+  `start` int(11) NOT NULL default '0',
+  `end` int(11) NOT NULL default '0',
+  `item` varchar(10) NOT NULL default '',
+  PRIMARY KEY  (`id`)
+) TYPE=MyISAM AUTO_INCREMENT=6741 ;
+
+-- 
+-- Daten für Tabelle `upgrades`
+-- 
+
+INSERT INTO `upgrades` VALUES (6683, 6230, 1116023228, 1116024599, 'ids');
+INSERT INTO `upgrades` VALUES (6732, 3582, 1116024309, 1116025501, 'sdk');
+INSERT INTO `upgrades` VALUES (6733, 3582, 1116024309, 1116025921, 'sdk');
+INSERT INTO `upgrades` VALUES (6735, 3584, 1116024327, 1116025107, 'bb');
+INSERT INTO `upgrades` VALUES (6736, 3584, 1116024327, 1116025107, 'bb');
+INSERT INTO `upgrades` VALUES (6678, 6230, 1116023224, 1116024299, 'ids');
+INSERT INTO `upgrades` VALUES (6723, 3577, 1116023551, 1116024450, 'ips');
+INSERT INTO `upgrades` VALUES (6674, 6230, 1116023223, 1116024059, 'ids');
+INSERT INTO `upgrades` VALUES (6673, 6230, 1116023222, 1116023819, 'ids');
+INSERT INTO `upgrades` VALUES (6672, 6230, 1116023221, 1116023579, 'ids');
+INSERT INTO `upgrades` VALUES (6671, 6230, 1116023219, 1116023399, 'ids');
+INSERT INTO `upgrades` VALUES (6737, 3584, 1116024327, 1116025167, 'bb');
+INSERT INTO `upgrades` VALUES (6738, 3584, 1116024327, 1116025167, 'bb');
+INSERT INTO `upgrades` VALUES (6638, 3579, 1116023105, 1116024484, 'ids');
+INSERT INTO `upgrades` VALUES (6639, 3579, 1116023105, 1116024784, 'ids');
+INSERT INTO `upgrades` VALUES (6640, 3580, 1116023120, 1116024380, 'ram');
+INSERT INTO `upgrades` VALUES (6641, 3580, 1116023123, 1116024620, 'bb');
+INSERT INTO `upgrades` VALUES (6642, 3580, 1116023123, 1116024920, 'bb');
+INSERT INTO `upgrades` VALUES (6643, 3580, 1116023123, 1116025220, 'bb');
+INSERT INTO `upgrades` VALUES (6644, 3580, 1116023124, 1116025580, 'bb');
+INSERT INTO `upgrades` VALUES (6645, 3580, 1116023124, 1116026060, 'bb');
+INSERT INTO `upgrades` VALUES (6646, 3580, 1116023124, 1116026540, 'bb');
+INSERT INTO `upgrades` VALUES (6648, 3581, 1116023142, 1116024762, 'ram');
+INSERT INTO `upgrades` VALUES (6649, 3581, 1116023142, 1116025842, 'ram');
+INSERT INTO `upgrades` VALUES (6650, 3581, 1116023142, 1116027102, 'ram');
+INSERT INTO `upgrades` VALUES (6651, 3581, 1116023146, 1116027342, 'bb');
+INSERT INTO `upgrades` VALUES (6652, 3581, 1116023146, 1116027702, 'bb');
+INSERT INTO `upgrades` VALUES (6653, 3581, 1116023147, 1116028062, 'bb');
+INSERT INTO `upgrades` VALUES (6654, 5336, 1116023158, 1116023638, 'rh');
+INSERT INTO `upgrades` VALUES (6655, 3583, 1116023158, 1116025678, 'cpu');
+INSERT INTO `upgrades` VALUES (6656, 3583, 1116023158, 1116028438, 'cpu');
+INSERT INTO `upgrades` VALUES (6657, 3583, 1116023159, 1116031918, 'cpu');
+INSERT INTO `upgrades` VALUES (6658, 5336, 1116023159, 1116024118, 'rh');
+INSERT INTO `upgrades` VALUES (6659, 5336, 1116023162, 1116025258, 'lan');
+INSERT INTO `upgrades` VALUES (6660, 3583, 1116023163, 1116032458, 'ram');
+INSERT INTO `upgrades` VALUES (6661, 3583, 1116023163, 1116033178, 'ram');
+INSERT INTO `upgrades` VALUES (6662, 3583, 1116023163, 1116034078, 'ram');
+INSERT INTO `upgrades` VALUES (6663, 3583, 1116023163, 1116035158, 'ram');
+INSERT INTO `upgrades` VALUES (6740, 3584, 1116024328, 1116025767, 'bb');
+INSERT INTO `upgrades` VALUES (6739, 3584, 1116024328, 1116025227, 'bb');
+INSERT INTO `upgrades` VALUES (6552, 4194, 1116019921, 1116025550, 'ram');
+INSERT INTO `upgrades` VALUES (6608, 3575, 1116023017, 1116024814, 'sdk');
+INSERT INTO `upgrades` VALUES (6607, 3575, 1116023017, 1116024814, 'sdk');
+INSERT INTO `upgrades` VALUES (6725, 3577, 1116023551, 1116025050, 'ips');
+INSERT INTO `upgrades` VALUES (6601, 3574, 1116023001, 1116024318, 'sdk');
+INSERT INTO `upgrades` VALUES (6602, 3574, 1116023001, 1116024618, 'sdk');
+INSERT INTO `upgrades` VALUES (6603, 3574, 1116023001, 1116024978, 'sdk');
+INSERT INTO `upgrades` VALUES (6604, 3574, 1116023001, 1116025338, 'sdk');
+INSERT INTO `upgrades` VALUES (6605, 3575, 1116023014, 1116024514, 'lan');
+INSERT INTO `upgrades` VALUES (6606, 3575, 1116023017, 1116024634, 'sdk');
+INSERT INTO `upgrades` VALUES (6550, 4194, 1116019915, 1116023930, 'ram');
+INSERT INTO `upgrades` VALUES (6515, 4957, 1116019687, 1116028808, 'cpu');
+INSERT INTO `upgrades` VALUES (6590, 3572, 1116022962, 1116025842, 'rh');
+INSERT INTO `upgrades` VALUES (6589, 3572, 1116022962, 1116025782, 'rh');
+INSERT INTO `upgrades` VALUES (6582, 3570, 1116022890, 1116024209, 'rh');
+INSERT INTO `upgrades` VALUES (6583, 3570, 1116022890, 1116024749, 'rh');
+INSERT INTO `upgrades` VALUES (6548, 5031, 1116019888, 1116023504, 'bb');
+INSERT INTO `upgrades` VALUES (6626, 3578, 1116023076, 1116024576, 'lan');
+INSERT INTO `upgrades` VALUES (6512, 4957, 1116019636, 1116022568, 'ram');
+INSERT INTO `upgrades` VALUES (6514, 4957, 1116019650, 1116025328, 'cpu');
+INSERT INTO `upgrades` VALUES (6517, 4188, 1116019716, 1116024034, 'lan');
+INSERT INTO `upgrades` VALUES (6518, 4188, 1116019719, 1116025294, 'cpu');
+INSERT INTO `upgrades` VALUES (6519, 5031, 1116019719, 1116022904, 'rh');
+INSERT INTO `upgrades` VALUES (6520, 4962, 1116019732, 1116022185, 'mm');
+INSERT INTO `upgrades` VALUES (6521, 4962, 1116019734, 1116022785, 'mm');
+INSERT INTO `upgrades` VALUES (6523, 4188, 1116019745, 1116028534, 'cpu');
+INSERT INTO `upgrades` VALUES (6524, 4971, 1116019747, 1116024708, 'bb');
+INSERT INTO `upgrades` VALUES (6525, 4971, 1116019749, 1116025128, 'bb');
+INSERT INTO `upgrades` VALUES (6526, 4188, 1116019755, 1116029614, 'mm');
+INSERT INTO `upgrades` VALUES (6527, 4964, 1116019758, 1116023365, 'lan');
+INSERT INTO `upgrades` VALUES (6528, 4188, 1116019759, 1116030694, 'mm');
+INSERT INTO `upgrades` VALUES (6529, 4965, 1116019767, 1116025482, 'lan');
+INSERT INTO `upgrades` VALUES (6557, 5844, 1116022061, 1116024515, 'ram');
+INSERT INTO `upgrades` VALUES (6558, 5844, 1116022063, 1116025775, 'ram');
+INSERT INTO `upgrades` VALUES (6559, 5844, 1116022065, 1116026495, 'cpu');
+INSERT INTO `upgrades` VALUES (6560, 5844, 1116022066, 1116027395, 'cpu');
+INSERT INTO `upgrades` VALUES (6561, 5844, 1116022068, 1116028475, 'cpu');
+INSERT INTO `upgrades` VALUES (6562, 5844, 1116022070, 1116029735, 'cpu');
+INSERT INTO `upgrades` VALUES (6563, 5845, 1116022081, 1116023281, 'mm');
+INSERT INTO `upgrades` VALUES (6564, 5845, 1116022108, 1116024481, 'mm');
+INSERT INTO `upgrades` VALUES (6565, 5845, 1116022110, 1116025861, 'mm');
+INSERT INTO `upgrades` VALUES (6566, 5845, 1116022113, 1116026581, 'ram');
+INSERT INTO `upgrades` VALUES (6567, 5845, 1116022115, 1116027481, 'ram');
+INSERT INTO `upgrades` VALUES (6568, 5845, 1116022118, 1116028561, 'ram');
+INSERT INTO `upgrades` VALUES (6495, 4964, 1116019291, 1116022465, 'lan');
+INSERT INTO `upgrades` VALUES (6497, 4965, 1116019305, 1116022782, 'lan');
+INSERT INTO `upgrades` VALUES (6618, 3576, 1116023042, 1116024534, 'mk');
+INSERT INTO `upgrades` VALUES (6611, 3575, 1116023018, 1116025234, 'sdk');
+INSERT INTO `upgrades` VALUES (6610, 3575, 1116023017, 1116025174, 'sdk');
+INSERT INTO `upgrades` VALUES (6503, 4970, 1116019342, 1116028321, 'cpu');
+INSERT INTO `upgrades` VALUES (6504, 4971, 1116019352, 1116022788, 'lan');
+INSERT INTO `upgrades` VALUES (6505, 4971, 1116019354, 1116024288, 'lan');
+INSERT INTO `upgrades` VALUES (6506, 5031, 1116019363, 1116022304, 'rh');
+INSERT INTO `upgrades` VALUES (6627, 3578, 1116023081, 1116024636, 'ips');
+INSERT INTO `upgrades` VALUES (6628, 3578, 1116023081, 1116024696, 'ips');
+INSERT INTO `upgrades` VALUES (6629, 3578, 1116023081, 1116024756, 'ips');
+INSERT INTO `upgrades` VALUES (6630, 3578, 1116023081, 1116024876, 'ips');
+INSERT INTO `upgrades` VALUES (6631, 3578, 1116023082, 1116024996, 'ips');
+INSERT INTO `upgrades` VALUES (6632, 3578, 1116023082, 1116025116, 'ips');
+INSERT INTO `upgrades` VALUES (6724, 3577, 1116023551, 1116024750, 'ips');
+INSERT INTO `upgrades` VALUES (6507, 4965, 1116019374, 1116024102, 'lan');
+INSERT INTO `upgrades` VALUES (6595, 3573, 1116022981, 1116024540, 'mk');
+INSERT INTO `upgrades` VALUES (6596, 3573, 1116022981, 1116024600, 'mk');
+INSERT INTO `upgrades` VALUES (6556, 5844, 1116022055, 1116023435, 'bb');
+INSERT INTO `upgrades` VALUES (6530, 4964, 1116019776, 1116024325, 'lan');
+INSERT INTO `upgrades` VALUES (6609, 3575, 1116023017, 1116024874, 'sdk');
+INSERT INTO `upgrades` VALUES (6597, 3573, 1116022981, 1116024600, 'mk');
+INSERT INTO `upgrades` VALUES (6446, 4956, 1116018708, 1116025891, 'ram');
+INSERT INTO `upgrades` VALUES (6491, 4956, 1116019260, 1116027691, 'cpu');
+INSERT INTO `upgrades` VALUES (6585, 3572, 1116022903, 1116023742, 'rh');
+INSERT INTO `upgrades` VALUES (6586, 3572, 1116022903, 1116024222, 'rh');
+INSERT INTO `upgrades` VALUES (6587, 3572, 1116022962, 1116024702, 'rh');
+INSERT INTO `upgrades` VALUES (6588, 3572, 1116022962, 1116025242, 'rh');
+INSERT INTO `upgrades` VALUES (6551, 4194, 1116019918, 1116024650, 'ram');
+INSERT INTO `upgrades` VALUES (6726, 3577, 1116023552, 1116025110, 'ips');
+INSERT INTO `upgrades` VALUES (6575, 5846, 1116022278, 1116029099, 'mm');
+INSERT INTO `upgrades` VALUES (6576, 5846, 1116022281, 1116030479, 'mm');
+INSERT INTO `upgrades` VALUES (6469, 4970, 1116018832, 1116025801, 'cpu');
+INSERT INTO `upgrades` VALUES (6615, 3576, 1116023035, 1116024354, 'ids');
+INSERT INTO `upgrades` VALUES (6536, 4968, 1116019808, 1116022953, 'lan');
+INSERT INTO `upgrades` VALUES (6537, 4968, 1116019810, 1116024453, 'lan');
+INSERT INTO `upgrades` VALUES (6538, 4970, 1116019820, 1116031081, 'cpu');
+INSERT INTO `upgrades` VALUES (6581, 3570, 1116022889, 1116024149, 'rh');
+INSERT INTO `upgrades` VALUES (6580, 3570, 1116022889, 1116024149, 'rh');
+INSERT INTO `upgrades` VALUES (6579, 3570, 1116022889, 1116024089, 'rh');
+INSERT INTO `upgrades` VALUES (6719, 3570, 1116023407, 1116025349, 'rh');
+INSERT INTO `upgrades` VALUES (6578, 3570, 1116022889, 1116023669, 'rh');
+INSERT INTO `upgrades` VALUES (6569, 5845, 1116022120, 1116029461, 'cpu');
+INSERT INTO `upgrades` VALUES (6570, 5846, 1116022259, 1116023159, 'mm');
+INSERT INTO `upgrades` VALUES (6571, 5846, 1116022261, 1116024239, 'mm');
+INSERT INTO `upgrades` VALUES (6572, 5846, 1116022265, 1116025319, 'mm');
+INSERT INTO `upgrades` VALUES (6573, 5846, 1116022270, 1116026519, 'mm');
+INSERT INTO `upgrades` VALUES (6574, 5846, 1116022273, 1116027719, 'mm');
+INSERT INTO `upgrades` VALUES (6555, 4194, 1116019932, 1116028970, 'bb');
+INSERT INTO `upgrades` VALUES (6522, 4188, 1116019742, 1116026734, 'cpu');
+INSERT INTO `upgrades` VALUES (6616, 3576, 1116023035, 1116024414, 'ids');
+INSERT INTO `upgrades` VALUES (6617, 3576, 1116023039, 1116024414, 'sdk');
+INSERT INTO `upgrades` VALUES (6444, 4956, 1116018702, 1116023191, 'cpu');
+INSERT INTO `upgrades` VALUES (6445, 4956, 1116018706, 1116024631, 'cpu');
+INSERT INTO `upgrades` VALUES (6545, 4966, 1116019870, 1116022317, 'sdk');
+INSERT INTO `upgrades` VALUES (6546, 4190, 1116019871, 1116022368, 'ips');
+INSERT INTO `upgrades` VALUES (6549, 4194, 1116019910, 1116023390, 'cpu');
+INSERT INTO `upgrades` VALUES (6468, 4970, 1116018828, 1116023641, 'cpu');
+INSERT INTO `upgrades` VALUES (6553, 4194, 1116019925, 1116026630, 'ram');
+INSERT INTO `upgrades` VALUES (6554, 4194, 1116019929, 1116027890, 'ram');
+INSERT INTO `upgrades` VALUES (6684, 6230, 1116023230, 1116024899, 'ids');
+INSERT INTO `upgrades` VALUES (6685, 3585, 1116023265, 1116024525, 'lan');
+INSERT INTO `upgrades` VALUES (6686, 3585, 1116023266, 1116025845, 'lan');
+INSERT INTO `upgrades` VALUES (6687, 3585, 1116023266, 1116027225, 'lan');
+INSERT INTO `upgrades` VALUES (6688, 3585, 1116023266, 1116028725, 'lan');
+INSERT INTO `upgrades` VALUES (6689, 3585, 1116023269, 1116028725, 'fw');
+INSERT INTO `upgrades` VALUES (6690, 3585, 1116023269, 1116028785, 'fw');
+INSERT INTO `upgrades` VALUES (6691, 3585, 1116023269, 1116028845, 'fw');
+INSERT INTO `upgrades` VALUES (6731, 3582, 1116024306, 1116025141, 'av');
+INSERT INTO `upgrades` VALUES (6730, 3582, 1116024305, 1116024841, 'av');
+INSERT INTO `upgrades` VALUES (6694, 3586, 1116023301, 1116024800, 'bb');
+INSERT INTO `upgrades` VALUES (6695, 3586, 1116023301, 1116025340, 'bb');
+INSERT INTO `upgrades` VALUES (6696, 3586, 1116023301, 1116025940, 'bb');
+INSERT INTO `upgrades` VALUES (6697, 3586, 1116023301, 1116026600, 'bb');
+INSERT INTO `upgrades` VALUES (6698, 3587, 1116023319, 1116025479, 'cpu');
+INSERT INTO `upgrades` VALUES (6699, 3587, 1116023319, 1116027999, 'cpu');
+INSERT INTO `upgrades` VALUES (6700, 3587, 1116023320, 1116030759, 'cpu');
+INSERT INTO `upgrades` VALUES (6701, 3587, 1116023320, 1116034239, 'cpu');
+INSERT INTO `upgrades` VALUES (6702, 3587, 1116023325, 1116034599, 'bb');
+INSERT INTO `upgrades` VALUES (6703, 3587, 1116023325, 1116035019, 'bb');
+INSERT INTO `upgrades` VALUES (6704, 3587, 1116023325, 1116035499, 'bb');
+INSERT INTO `upgrades` VALUES (6729, 3582, 1116024301, 1116025021, 'mk');
+INSERT INTO `upgrades` VALUES (6706, 3588, 1116023338, 1116024598, 'bb');
+INSERT INTO `upgrades` VALUES (6707, 3588, 1116023341, 1116025978, 'lan');
+INSERT INTO `upgrades` VALUES (6708, 3588, 1116023341, 1116027478, 'lan');
+INSERT INTO `upgrades` VALUES (6709, 3588, 1116023343, 1116027478, 'fw');
+INSERT INTO `upgrades` VALUES (6710, 3588, 1116023343, 1116027478, 'fw');
+INSERT INTO `upgrades` VALUES (6711, 3588, 1116023343, 1116027538, 'fw');
+INSERT INTO `upgrades` VALUES (6728, 3582, 1116024301, 1116024841, 'fw');
+INSERT INTO `upgrades` VALUES (6727, 3582, 1116024301, 1116024541, 'fw');
+INSERT INTO `upgrades` VALUES (6734, 3584, 1116024327, 1116024687, 'bb');
+INSERT INTO `upgrades` VALUES (6715, 3589, 1116023357, 1116024856, 'cpu');
+INSERT INTO `upgrades` VALUES (6716, 3589, 1116023357, 1116025576, 'cpu');
+INSERT INTO `upgrades` VALUES (6717, 3589, 1116023357, 1116026476, 'cpu');
+INSERT INTO `upgrades` VALUES (6718, 3589, 1116023357, 1116027556, 'cpu');
+
+-- --------------------------------------------------------
+
+-- 
+-- Tabellenstruktur für Tabelle `users`
+-- 
+
+CREATE TABLE `users` (
+  `id` smallint(6) NOT NULL auto_increment,
+  `name` varchar(40) default NULL,
+  `email` varchar(50) default NULL,
+  `password` tinytext,
+  `pcs` text,
+  `gender` enum('m','w','x') NOT NULL default 'x',
+  `birthday` varchar(10) default '0.0.0',
+  `stat` smallint(6) default '1',
+  `liu` varchar(10) default NULL,
+  `lic` varchar(10) default NULL,
+  `clusterstat` smallint(6) default NULL,
+  `homepage` tinytext,
+  `infotext` text,
+  `wohnort` tinytext,
+  `la` varchar(10) default NULL,
+  `ads` enum('no','yes') NOT NULL default 'yes',
+  `bigacc` enum('no','yes') NOT NULL default 'no',
+  `usessl` enum('no','yes') NOT NULL default 'no',
+  `enable_usrimg` enum('yes','no') NOT NULL default 'no',
+  `usrimg_fmt` enum('points','ranking','points ranking','cluster points','cluster ranking','cluster points ranking') NOT NULL default 'cluster points ranking',
+  `noipcheck` enum('no','yes') NOT NULL default 'no',
+  `newmail` varchar(10) default '0',
+  `lastmail` varchar(10) default NULL,
+  `points` mediumint(9) default '0',
+  `sig_mails` tinytext,
+  `sig_board` tinytext,
+  `cluster` int(6) default NULL,
+  `cm` varchar(6) default NULL,
+  `login_time` int(11) NOT NULL default '0',
+  `sid` tinytext,
+  `sid_ip` tinytext,
+  `locked` enum('no','yes') NOT NULL default 'no',
+  `stylesheet` enum('anti-ie','crystal','standard','konsole') NOT NULL default 'crystal',
+  `inbox_full` tinytext,
+  `avatar` tinytext,
+  `rank` smallint(6) default '0',
+  `da_avail` enum('no','yes') NOT NULL default 'no',
+  `acode` varchar(16) default NULL,
+  `tcode` varchar(16) default NULL,
+  `pcview_ext` enum('yes','no') NOT NULL default 'yes',
+  `notiz` text,
+  `pcsort` varchar(100) default NULL,
+  PRIMARY KEY  (`id`)
+) TYPE=MyISAM AUTO_INCREMENT=15 ;
+
+-- 
+-- Daten für Tabelle `users`
+-- 
+
+INSERT INTO `users` VALUES (1, 'BODY-SNATCHER', 'body-snatcher@gmx.de', '434d09302266ad231082529167fa4736', '1,392', 'x', '0.0.0', 1000, '1115822781', '1115918127', 1000, '', 'Die ist der Account des Admins von HackTheNet.....\r\n\r\nEr existiert nur zu Testzwecken und wird nicht zu aktiviem spielen genutzt.\r\n\r\nMfg BODY-SNATCHER\r\n\r\nPS: Ja ihr k&ouml;nnt angreifen es gibt keine Bans oder sonstige Strafen darauf...... ich schie&szlig;e auch net zur&uuml;ck ;). Seht die PCs einfach als NoNames.', '', '1115641828', 'yes', 'yes', 'no', 'yes', 'cluster points ranking', '', '0', '1115918181', 2048, '', '', 8, '12.05.', 1115918106, '175uTdLL399H7562', '217.186.38.212', 'no', 'crystal', '', '', 4, 'yes', 'Ik8v99316771JPt9', 'X33L97Kto6', 'yes', '', 'country ASC');
+
+
+?>

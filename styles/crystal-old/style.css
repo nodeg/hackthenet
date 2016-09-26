@@ -1,0 +1,967 @@
+
+/* allgemein */
+
+a {
+	color: #800000;
+	text-decoration: none;
+}
+
+div.submenu p {
+	font-weight: bold;
+	font-size: 13px;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+body {
+	background-color: #ffffff;
+	color: #000000;
+	font-family: Verdana,Arial,sans-serif;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+
+div.content {
+	margin: 10px 200px 10px 0px;
+	padding: 10px;
+}
+
+h1 {
+	background-color:white;
+	background-image:url(logo.png);
+	background-repeat:no-repeat;
+	background-position:30px 10px;
+	color:rgb(192,192,192);
+	font-size:13px;
+	font-weight:bold;
+	height:145px;
+	margin:0 0 10px 0;
+	text-align:right;
+}
+
+h2 {
+	background-repeat: no-repeat;
+	border-color: #c0c0c0;
+	border-style: none none solid;
+	border-width: 1px;
+	color: #808080;
+	font-size: 24px;
+	margin: 0 0 20px;
+	padding: 20px 20px 20px 80px;
+	text-transform: uppercase;
+}
+
+h3 {
+	background-repeat: no-repeat;
+	font-size: 14px;
+	height: 32px;
+	margin: 40px 0 2px 80px;
+	padding: 7px 40px;
+	text-decoration: underline;
+}
+
+h4 {
+	font-size: 12px;
+	margin: 40px 0 10px 80px;
+}
+
+.important h3 {
+	background-image: url(32/important.png);
+}
+
+.error h3 {
+	background-image: url(32/stop.png);
+}
+
+.ok h3 {
+	background-image: url(32/ok.png);
+}
+.tip h3 {
+	background-image: url(32/tip.png);
+}
+.info h3 {
+	background-image: url(32/info.png);
+}
+.work h3 {
+	background-image: url(32/work.png);
+}
+.important, .ok, .error, .tip, .info, .work {
+	font-weight: bold;
+}
+
+p, dl, ul {
+	margin: 0 0 10px 80px;
+}
+
+ul.nomargin {
+  margin: 0;
+}
+
+
+dt {
+	font-weight: bold;
+}
+
+th {
+	background-color: #d0d0d0;
+	font-weight: bold;
+	padding: 6px;
+	text-align: left;
+}
+
+td {
+	background-color: #e0e0e0;
+	padding: 5px;
+}
+
+table {
+	font-size: 12px;
+	margin: 10px 0 10px 80px;
+}
+
+table.nomargin {
+	font-size:12px;
+	margin:0;
+}
+
+#generation-time {
+	color:rgb(192,192,192);
+	font-size: 8pt;
+	font-weight:bold;
+	position:absolute;
+	right:5px;
+	top:20px;
+}
+
+#generation-time:before {
+	content:"[";
+}
+
+#generation-time:after {
+	content:"]";
+}
+
+#server-time {
+	/*color:rgb(192,192,192);*/
+	font-size: 8pt;
+	font-weight:bold;
+	position:absolute;
+	right:5px;
+	top:75px;
+}
+
+img {
+	border: none;
+}
+
+.miniad
+{
+  position: absolute;
+  right: 10px;
+  top: 600px;
+}
+
+
+/* werbung */
+
+.ad {
+	margin: 0px 0px 0px 20px;
+}
+
+
+/* work */
+#work h2 {
+	background-image:url(64/work.png);
+}
+
+
+
+/* Public */
+
+img#firefox {
+	float:right;
+}
+
+#public h2 {
+	display: none;
+	/*background-image: url(64/attack1.png);*/
+}
+
+#public-statistic h3 {
+	background-image: url(32/statistic.png);
+}
+
+#public-login h3 {
+	background-image: url(32/signup.png);
+}
+
+#public-login-extended-options:not(:target) {
+	display:none;
+}
+
+#public-reg1 h3,
+#public-reg2 h3,
+#public-reg3 h3,
+#public-regactivate h3 {
+	background-image: url(32/signup.png);
+}
+
+#public-doc-regeln h3,
+#public-doc-regelverstoss h3 {
+	background-image: url(32/run.png);
+}
+
+#public-team h2 {
+	background-image: url(64/footstep.png);
+}
+
+#team-kings h3 {
+	background-image: url(32/attack2.png);
+}
+
+#team-helper h3 {
+	background-image: url(32/positions.png);
+}
+
+#team-else h3 {
+	background-image: url(32/tip.png);
+}
+
+#impressum-partner h3 {
+	background-image: url(32/user.png);
+}
+#impressum-kontakt h3 {
+	background-image: url(32/mail.png);
+}
+
+#server-statistic h2 {
+	background-image: url(64/statistic.png);
+}
+
+#server-statistic h3 {
+	background-image: url(32/network.png);
+}
+
+#public-newpwd h3 {
+	background-image: url(32/password.png);
+}
+
+#register h2 {
+	background-image: url(64/signup.png);
+}
+
+#register-step1 h3 {
+	background-image: url(32/user.png);
+}
+
+#register-step2 h3 {
+	background-image: url(32/locale.png);
+}
+
+#public-news h2 {
+	background-image: url(64/subnet.png);
+}
+
+#chat-signup h3 {
+  background-image: url(32/xchat.png);
+}
+
+
+
+/* faq */
+
+#faq h2 {
+	background-image: url(64/help.png);
+}
+#faq-faq1 h3,
+#faq-faq2 h3,
+#faq-faq3 h3,
+#faq-faq4 h3,
+#faq-faq5 h3,
+#faq-faq6 h3,
+#chat-help h3 {
+	background-image:url(32/help.png);
+}
+
+
+
+/* rules */
+
+#rules h2,
+#ruleoffence h2 {
+	background-image:url(64/rules.png);
+}
+#rules-rules h3,
+#ruleoffence-submit h3 {
+	background-image:url(32/rule.png);
+}
+
+
+
+/* messages */
+
+#messages h2 {
+	background-image: url(64/mail.png);
+}
+
+#messages-inbox h3,
+#messages-system h3 {
+	background-image: url(32/mail.png);
+}
+
+#messages-compose h3 {
+	background-image: url(32/mail-new.png);
+}
+
+#messages-archive h3 {
+	background-image: url(32/package.png);
+}
+
+#messages-outbox h3 {
+	background-image: url(32/mail-outbox.png);
+}
+
+#messages-transmit1 h3,
+#messages-transmit2 h3 {
+	background-image: url(32/transmit.png);
+}
+
+#messages-inbox td.options,
+#messages-outbox td.options,
+#messages-system td.options,
+#messages-compose-confirm td,
+#messages-archive-confirm td,
+#messages-outbox-confirm td,
+#messages-compose-address-book td,
+#messages-transmit1-confirm td,
+#messages-transmit2-confirm td,
+#messages-transmit2-inbox td,
+#messages-transmit2-outbox td,
+#messages-transmit2-archive td {
+	background-color: #d0d0d0;
+	font-weight: bold;
+	text-align: center;
+}
+
+#messages-inbox td.number,
+#messages-system td.number,
+#messages-archive td.number,
+#messages-outbox td.number,
+#messages-transmit2 td.number {
+	background-image: url(32-gray/mail.png);
+	background-position: 2px 2px;
+	background-repeat: no-repeat;
+	height: 36px;
+	padding: 5px 5px 5px 40px;
+}
+
+#messages-inbox tr.not-read td.number,
+#messages-system tr.not-read td.number {
+	background-image: url(32-gray/mail-not-read.png);
+}
+
+#messages-inbox td.time,
+#messages-system td.time,
+#messages-archive td.time,
+#messages-outbox td.time {
+	text-align: right;
+}
+
+#messages-inbox tr.not-read,
+#messages-system tr.not-read {
+	font-weight: bold;
+}
+
+#messages-compose-recipient input,
+#messages-compose-subject input,
+#messages-compose textarea,
+#messages-transmit1-mail-address input,
+#messages-transmit1-mail-subject input {
+	border-color: #c0c0c0;
+	border-style: solid;
+	border-width: 1px;
+	font-family: Verdana,Arial,sans-serif;
+	font-size: 12px;
+	/*padding: 3px;*/
+	width: 300px;
+}
+
+#messages-compose textarea {
+	height: 150px;
+	width: 300px;
+}
+
+#messages-inbox td.number,
+#messages-inbox td.checkbox,
+#messages-system td.number,
+#messages-system td.checkbox,
+#messages-archive td.number,
+#messages-archive td.checkbox,
+#messages-outbox td.number,
+#messages-outbox td.checkbox,
+#messages-transmit2 td.checkbox {
+	text-align: center;
+}
+
+#messages-message-read h3 {
+	background-image: url(32/mail.png);
+}
+
+
+
+
+
+/* overview */
+
+#overview h2 {
+	background-image: url(64/home.png);
+}
+
+#overview-computer h3 {
+	background-image: url(32/computer.png);
+}
+
+#overview-cluster h3 {
+	background-image: url(32/cluster.png);
+}
+
+#overview-messages h3 {
+	background-image: url(32/mail.png);
+}
+
+#overview-ranking h3 {
+	background-image: url(32/statistic.png);
+}
+
+
+
+
+
+
+/* computer */
+
+#computer h2 {
+	background-image: url(64/computer.png);
+}
+
+#computer-list h3,
+#computer-rename h3 {
+	background-image: url(32/computer.png);
+}
+
+#computer-properties h3 {
+	background-image: url(32/essentials.png);
+}
+
+#computer-essentials h3,
+#computer-item h3#computer-item-essential {
+	background-image: url(32/memory.png);
+}
+
+#computer-software h3,
+#computer-item h3#computer-item-software {
+	background-image: url(32/software.png);
+}
+
+#computer-security h3,
+#computer-item h3#computer-item-security {
+	background-image: url(32/security.png);
+}
+
+#computer-attack h3,
+#computer-item h3#computer-item-attack {
+	background-image: url(32/attack.png);
+}
+
+#computer td.number {
+	background-image: url(32-gray/computer.png);
+	background-position: 2px 2px;
+	background-repeat: no-repeat;
+	height: 36px;
+	padding: 5px 5px 5px 40px;
+	text-align: center;
+}
+
+#computer td.upgrade {
+	color: green;
+}
+
+#computer td.no-upgrade {
+	color: red;
+}
+#computer-profit h3 {
+	background-image: url(32/money.png);
+}
+#computer-transfer-start h3 {
+	background-image: url(32/transmit.png);
+}
+#computer-upgrades h3,
+#computer-upgrade-done h3 {
+	background-image: url(32/upgrade.png);
+}
+
+
+/* settings */
+
+#settings h2 {
+	background-image: url(64/settings.png);
+}
+
+#settings-settings h3 {
+	background-image: url(32/settings.png);
+}
+
+#settings-king h3 {
+	background-image: url(32/king.png);
+}
+
+#settings-mail h3 {
+	background-image: url(32/mail.png);
+}
+
+#settings-password h3 {
+	background-image: url(32/password.png);
+}
+
+#settings-settings-homepage input,
+#settings-settings-city input,
+#settings-settings-avatar input,
+#settings-settings-mail-maximum input,
+#settings-mail-address input,
+#settings-mail-password input,
+#settings-password-password input {
+	border-color: #c0c0c0;
+	border-style: solid;
+	border-width: 1px;
+	font-family: Verdana,Arial,sans-serif;
+	font-size: 12px;
+	padding: 3px;
+	width: 300px;
+}
+
+#settings-settings-style select {
+	border-color: #c0c0c0;
+	border-style: solid;
+	border-width: 1px;
+	font-family: Verdana,Arial,sans-serif;
+	font-size: 12px;
+	width: 300px;
+}
+
+#settings-settings td textarea {
+	border-color: #c0c0c0;
+	border-style: solid;
+	border-width: 1px;
+	padding: 3px;
+	font-family: Verdana,Arial,sans-serif;
+	font-size: 12px;
+	/* height: 100px;
+	width: 300px; IR-Hack ;-) */
+}
+
+#settings-settings-confirm td,
+#settings-mail-confirm td,
+#settings-password-confirm td {
+	background-color: #d0d0d0;
+	text-align: center;
+}
+
+
+/* Angriffe */
+
+#attacks h2 {
+	background-image: url(64/attack1.png);
+}
+#attacks-attack1 h3,
+#attacks-attack2 h3,
+#attacks-attack3 h3,
+#attacks-attack4 h3 {
+	background-image: url(32/bomb.png);
+}
+
+
+/* cluster */
+
+#cluster h2,
+#cluster-profile h2 {
+	background-image: url(64/cluster.png);
+}
+
+#cluster-notice-create h3 {
+	background-image: url(32/mail-new.png);
+}
+
+#cluster-overview h3,
+#cluster-profile-profile h3,
+#cluster-found h3,
+#cluster-request-new1 h3,
+#cluster-request-new2 h3,
+#cluster-request-administration h3 {
+	background-image: url(32/cluster.png);
+}
+
+#cluster-overview-infotext h3 {
+	background-image: url(32/info.png);
+}
+
+#cluster-distributed-attacks h3 {
+	background-image: url(32/da.png);
+}
+
+#cluster-convents h3,
+#cluster-create-convent h3 {
+	background-image: url(32/convents.png);
+}
+
+#cluster-settings h3 {
+	background-image: url(32/settings.png);
+}
+
+#cluster-members h3,
+#cluster-member-administration h3 {
+	background-image: url(32/user.png);
+}
+
+#cluster-overview-board1 td,
+#cluster-overview-board2 td {
+	background-color: #d0d0d0;
+	font-weight: bold;
+	text-align: center;
+}
+
+#cluster-distributed-attacks tr {
+	vertical-align: top;
+}
+
+#cluster-distributed-attacks td.ip,
+#cluster-distributed-attacks td.owner,
+#cluster-distributed-attacks td.author {
+	background-position: 2px 2px;
+	background-repeat: no-repeat;
+	height: 36px;
+	padding: 5px 5px 5px 40px;
+}
+
+#cluster-distributed-attacks td.ip {
+	background-image: url(32-gray/computer.png);
+}
+
+
+#cluster-distributed-attacks td.owner {
+	background-image: url(32-gray/user.png);
+}
+
+#cluster-distributed-attacks td.author {
+	background-image: url(32-gray/attack.png);
+}
+
+#cluster-distributed-attack h2 {
+	background-image: url(64/da.png);
+}
+
+#cluster-distributed-attack-join-start h3,
+#cluster-distributed-attack-create-ok h3 {
+	background-image: url(32/attack.png);
+}
+
+#cluster-create-distributed-attack h3,
+#cluster-create-distributed-attack2 h3 {
+	background-image: url(32/da.png);
+}
+
+#cluster-overview-events td div {
+	height: 100px;
+	overflow: scroll;
+}
+#cluster-create-distributed-attack-confirm td,
+#cluster-create-distributed-attack2-confirm td {
+	background-color: #d0d0d0;
+	text-align: center;
+}
+
+#cluster-money h3,
+#cluster-tax h3,
+#cluster-transfers h3 {
+	background-image: url(32/money.png);
+}
+
+#cluster-tax-paid h3 {
+	background-image: url(32/user.png);
+}
+
+#cluster-battles h3 {
+	background-image: url(32/attack.png);
+}
+
+
+/* cluster-board */
+
+#cluster-board h2,
+#cluster-board-post h2 {
+	background-image: url(64/board.png);
+}
+
+#cluster-board-folder1 h3,
+#cluster-board-folder2 h3,
+#cluster-board-folder3 h3,
+#cluster-board-post h3 {
+	background-image: url(32/folder.png);
+}
+
+#cluster-board-folder1-confirm td,
+#cluster-board-folder2-confirm td,
+#cluster-board-folder3-confirm td,
+#cluster-board-newthread-confirm td {
+	background-color: #d0d0d0;
+	text-align: center;
+}
+
+#cluster-board-newthread img {
+	border-style: none;
+	margin: 1px;
+}
+
+#cluster-board-newthread h3,
+#cluster-board-post-reply h3 {
+	background-image: url(32/edit.png);
+}
+
+
+
+
+
+/* ranking */
+
+#ranking h2 {
+	background-image: url(64/statistic.png);
+}
+
+#ranking-user h3 {
+	background-image: url(32/user.png);
+}
+
+#ranking-cluster h3 {
+	background-image: url(32/cluster.png);
+}
+
+#ranking-user td.navigation {
+	background-color: #d0d0d0;
+	font-weight: bold;
+	padding: 5px;
+}
+
+#ranking-user td.number {
+	background-image: url(32-gray/user.png);
+	background-position: 2px 2px;
+	background-repeat: no-repeat;
+	height: 36px;
+	padding: 5px 5px 5px 40px;
+	text-align: center;
+}
+
+#ranking-user td.cluster {
+	background-image: url(32-gray/cluster.png);
+	background-position: 2px 2px;
+	background-repeat: no-repeat;
+	height: 36px;
+	padding: 5px 5px 5px 40px;
+}
+
+#ranking-user td.points,
+#ranking-user td.navigation,
+#ranking-cluster td.points,
+#ranking-cluster td.navigation {
+	text-align: center;
+}
+
+#ranking-cluster td.number {
+	background-image: url(32-gray/cluster.png);
+	background-position: 2px 2px;
+	background-repeat: no-repeat;
+	height: 36px;
+	padding: 5px 5px 5px 40px;
+	text-align: center;
+}
+
+
+
+
+/* Subnet */
+
+#subnet h2 {
+	background-image: url(64/subnet.png);
+}
+
+#subnet-properties h3 {
+	background-image: url(32/essentials.png);
+}
+
+#subnet-content h3 {
+	background-image: url(32/subnet.png);
+}
+
+#subnet-content td.owner,
+#subnet-content td.cluster,
+#subnet-content td.ip {
+	background-position: 2px 2px;
+	background-repeat: no-repeat;
+	height: 36px;
+	padding: 5px 5px 5px 40px;
+}
+
+#subnet-properties td.options,
+#subnet-properties td.map,
+#subnet-content td.navigation {
+	background-color: #d0d0d0;
+	font-weight: bold;
+	padding: 5px;
+}
+
+#subnet-content td.cluster {
+	background-image: url(32-gray/cluster.png);
+}
+
+#subnet-content td.ip {
+	background-image: url(32-gray/computer.png);
+}
+
+#subnet-content td.owner {
+	background-image: url(32-gray/user.png);
+}
+
+#subnet-properties td.map,
+#subnet-content td.number,
+#subnet-content td.points,
+#subnet-content td.navigation {
+	text-align: center;
+}
+
+/* user-profile */
+#user-profile h2 {
+	background-image: url(64/user.png);
+}
+
+#user-profile-profile h3 {
+	background-image: url(32/identity.png);
+}
+
+
+
+
+
+/* help */
+
+#help h2 {
+	background-image: url(64/help.png);
+}
+
+#help-common h3 {
+	background-image: url(32/tip.png);
+}
+
+#help-availability h3 {
+	background-image: url(32/decrypted.png);
+}
+
+#help-content h3 {
+	background-image: url(32/help-index.png);
+}
+
+#help-cluster h3 {
+	background-image: url(32/cluster.png);
+}
+
+#help-cluster2 h3 {
+	background-image: url(32/positions.png);
+}
+
+#help-cluster3 h3 {
+	background-image: url(32/convents.png);
+}
+
+#help-ip h3 {
+	background-image: url(32/locale.png);
+}
+
+#help-moneymarket h3 {
+	background-image: url(32/calc.png);
+}
+
+
+
+/* Adressbuch */
+
+#abook-selpage h2,
+#abook-administration h2 {
+	background-image: url(64/abook.png);
+}
+
+#abook-selpage h3,
+#abook-administration h3 {
+	background-image: url(32/abook.png);
+}
+
+
+
+/* rechte Navigationsleiste */
+
+ul.navigation {
+	display: block;
+	float: right;
+	margin: 10px;
+	padding: 0;
+	position: absolute;
+	right: 0px;
+	top: 135px;
+}
+
+ul.navigation li {
+	background-color: #e0e0e0;
+	border-color: #c0c0c0;
+	border-width: 1px;
+	border-style: solid;
+	display: block;
+	list-style-type: none;
+	margin: 0 0 2px;
+	padding: 0;
+	overflow: hidden;
+}
+
+ul.navigation a {
+	color: black;
+	display: block;
+	padding: 7px 7px;
+	text-decoration: none;
+	width: 170px;
+}
+
+ul.navigation a:hover {
+	background-color: #d0d0d0;
+	color: black;
+	text-decoration: none;
+}
+
+ul.navigation a strong {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+ul.navigation div.help {
+	display: none;
+}
+
+ul.navigation li:hover div.help {
+	background-color: #f0f0f0;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #c0c0c0;
+	display: block;
+	padding: 3px;
+	position: absolute;
+	top: 0px;
+	left: -220px;
+	width: 200px;
+}
