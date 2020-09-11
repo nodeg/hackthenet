@@ -1,0 +1,2 @@
+Das Malware Kit ist sozusagen die Brutst&auml;tte der Angriffswaffen. Welche Waffen hier
+zur Verf&uuml;gung stehen, h&auml;ngt von der Versionsnummer des Malware Kits ab.

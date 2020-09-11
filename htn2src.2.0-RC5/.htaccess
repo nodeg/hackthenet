@@ -1,0 +1,14 @@
+DirectoryIndex index.php
+
+AddType application/x-httpd-php .htn
+
+<Files *res.php>
+order deny,allow
+deny  from all
+</Files>
+
+<IfModule mod_php4.c>
+php_flag magic_quotes_runtime Off
+php_flag magic_quotes_gpc Off
+php_flag error_reporting 2039
+</IfModule>

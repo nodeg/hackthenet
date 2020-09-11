@@ -1,0 +1,28 @@
+/*@media screen, projection {*/
+div.subnavi_content {
+  padding-right: 140px;
+  margin-right: -140px;
+}
+
+ul { padding-left: 50px; }
+
+ul.navigation li {
+  margin: 0;
+}
+
+h3 {
+	height: 36px;
+	padding-bottom: 20px;
+}
+
+ul.postview li div.post_main_area, div.post_preview div.post_main_area {
+  width: 60%;
+  z-index: 2;
+}
+
+ul.postview li, div.post_preview {
+  z-index: 1;
+}
+
+
+/*}*/

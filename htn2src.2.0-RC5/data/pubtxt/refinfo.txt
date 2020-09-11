@@ -1,0 +1,30 @@
+<h3>Werben von neuen Benutzern</h3>
+<p><strong>Mit diesem "Bonusprogramm" profitierst du davon, wenn du neue Mitspieler
+f&uuml;r das Spiel wirbst!</strong></p><br /><br />
+Und so gehts:
+<ol>
+<li>Klicke - nachdem du dich eingeloggt hast - auf <i>Optionen</i>.
+<li>Dort findest du im unteren Bereich der Tabelle einen Eintrag mit dem
+Namen <i>Ref-Link</i>.
+<li>Kopiere dir die Web-Adresse, die rechts davon steht.
+<li>Ver&ouml;ffentliche jetzt diese Adresse in einem Forum oder auf deiner Webseite oder
+in einer Email oder sonst irgendwo.
+</ol>
+Sobald jetzt jemand &uuml;ber diese Adresse die Startseite aufruft und sich registriert,
+wird gespeichert, dass du diesen neuen User geworben hast.<br />
+Um sicherzustellen, dass das Bonusprogramm nicht missbraucht wird, bekommst du erst dann einen geworbenen User gutgeschrieben,
+wenn der neue User die Marke von 20 Punkten &uuml;berschritten hat.
+<br /><br />
+Deinen aktuellen Punkte-Stand kannst du ebenfalls in den Optionen unter "Geworbene User"
+ablesen.<br /><br />
+<b>Und das ist dein Lohn f&uuml;r geworbene User:</b><br />
+<table cellspacing=1 cellpadding=3>
+<tr style="background-color:lightgrey;color:black;"><td nowrap><b>Geworbene User</b></td><td><b>Pr&auml;mie</b></td></tr>
+<tr style="background-color:#222222;"><td>unter 15</td><td>1000 Credits pro geworbenem User</td></tr>
+<tr style="background-color:#222222;"><td>15 bis 25</td><td>einen werbefreien Account</td></tr>
+<tr style="background-color:#222222;"><td>mehr als 25</td><td>einen werbefreien "Extended Account" mit Adressbuch im
+Wert von 5 Euro!</td></tr>
+</table>
+
+<br /><b>Abgerechnet wird jeweils am Ende eines Monats. Wer schon einen werbefreien oder Extended Account besitzt und mehr
+als 15 bzw. 25 User geworben hat, der bekommt als Ersatz 10.000 Credits &uuml;berwiesen.</b>

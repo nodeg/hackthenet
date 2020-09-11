@@ -1,0 +1,572 @@
+/*@import url(../handheld.css) handheld;
+/* allgemein
+@media screen, projection { */
+body {
+	font-family: Verdana,Arial,sans-serif;
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px;
+}
+
+div.content {
+	margin: 0 140px 10px 0;
+	padding: 0 10px 10px 10px;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	background-repeat: no-repeat;
+	background-position: 30px 0px;
+	font-size: 12px;
+	font-weight: bold;
+	height: 100px;
+	margin: 2px 6px 10px 0px;
+	padding: 0px;
+	text-align: right;
+}
+
+h2 {
+	background-repeat: no-repeat;
+	border-style: none none solid;
+	border-width: 1px;
+	font-size: 24px;
+	margin: 0 0 20px;
+	padding: 1px 20px 20px 80px;
+	text-transform: uppercase;
+}
+
+h3 {
+	background-repeat: no-repeat;
+	font-size: 14px;
+	height: 32px;
+	margin: 40px 0 2px 80px; /* oben, rechts, unten, links */
+	padding: 5px 40px;
+	text-decoration: underline;
+}
+
+h4 {
+	font-size: 12px;
+	margin: 40px 0 10px 80px;
+}
+
+div.submenu p {
+	font-weight: bold;
+	font-size: 13px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.important p, .ok p, .error p, .tip p, .info p, .work p {
+	font-weight: bold;
+}
+
+p {
+	margin: 0 0 10px 80px;
+}
+
+dl {
+	margin: 0 0 10px 120px;
+}
+
+dt {
+	font-weight: bold;
+}
+
+th {
+	font-weight: bold;
+	padding: 5px;
+	text-align: left;
+  vertical-align: middle;
+}
+
+tr.head th, thead th {
+	font-weight: bold;
+	padding: 5px;
+	text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+td {
+	padding: 5px;
+}
+
+table {
+	font-size: 12px;
+	margin: 10px 0 10px 80px;
+	border-style: solid;
+	border-width: 1px;
+	/*-moz-border-radius: 4px;*/
+}
+
+table.nomargin {
+	font-size: 12px;
+	margin: 0;
+}
+
+img.smallimg {
+  vertical-align: middle;
+}
+
+#generation-time {
+	font-size: 8pt;
+	font-weight: bold;
+	position: absolute;
+	right: 6px;
+	top: 20px;
+}
+
+#clock {
+	font-size: 8pt;
+	font-weight: bold;
+	position: absolute;
+	right: 6px;
+	top: 75px;
+}
+
+img {
+	border: none;
+	vertical-align: middle;
+}
+
+input.flatbutton {
+  border-style: solid;
+  border-width: 1px;
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+/* rechte Navigationsleiste */
+
+ul.navigation {
+  position: absolute;
+	display: block;
+	float: right;
+	margin: 10px;
+	margin-right: 6px;
+	padding: 0;
+	/*padding-bottom: 25px;*/
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	right: 0px;
+	top: 135px;
+}
+
+ul.navigation li {
+	display: block;
+	padding: 0;
+	width: 125px;
+	overflow: hidden;
+	list-style-type: none;
+	margin: 0 0 1px 0;
+}
+
+ul.navigation li a {
+	border-width: 1px;
+	border-style: solid;
+	font-size: 11px;
+	display: block;
+	padding: 4px 5px;
+	text-decoration: none;
+}
+
+ul.navigation li a:hover {
+	border-width: 1px;
+	border-style: solid;
+	text-decoration: none;
+}
+
+ul.navigation a b {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+
+input.stylish, textarea.stylish {
+  border-style: solid;
+  border-width: 1px;
+  font-family: Verdana,Arial,sans-serif;
+  font-size: 12px;
+  padding: 2px;
+}
+
+td.explanation, td span.explanation, th span.explanation {
+  font-size: 10px;
+}
+
+p.explanation {
+  font-weight: bold;
+  /*width: 90%;*/
+}
+
+tr.submit td,
+tr.submit th {
+  text-align: right;
+}
+tr.submit input {
+  /*width: 35%;*/
+}
+
+blockquote.bb {
+  font-size: 11px;
+  border-style: solid;
+  border-width: 1px;
+  border-left-width: 2px;
+  border-left-style: solid;
+  margin-left: 4px;
+  padding: 6px;
+  margin-bottom: 0px;
+  display: block;
+}
+
+div.bbbox {
+  font-size: 11px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 4px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+
+span.useronline {
+  font-weight: bold;
+}
+
+span.useroffline { }
+
+body.popup {
+  padding: 10px;
+}
+
+body.popup table, body.popup p {
+  margin-left: 0px;
+}
+
+body.popup h3 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+
+ul {
+  margin-left: 80px;
+  list-style-type: square;
+}
+
+table ul {
+  margin: 0;
+  padding: 0;
+  margin-left: 20px;
+}
+
+form {
+  margin-bottom: 0;
+}
+
+dd { margin-bottom: 7px; }
+
+
+
+div.sub_navi {
+  float: left;
+  border-right-style: solid;
+  border-right-width: 1px;
+  width: 183px;
+}
+div.sub_navi ul {
+  margin: 0px;
+  padding: 0px;
+  padding-left: 30px;
+}
+
+div.sub_navi ul li {
+  list-style: none;
+  margin: 0 0 5px 17px;
+}
+
+div.sub_navi ul li.main {
+  font-weight: bold;
+  margin: 0 0 5px 0;
+  /* oben, rechts, unten, links */
+}
+
+div.subnavi_content {
+  /*float: left;*/
+  margin: 0 0 0 185px;
+  padding: 0;
+  /*width: 76%;*/
+}
+
+div.subnavi_content h3 {
+  margin: 0 0 0 20px;
+}
+div.subnavi_content div h3{
+  margin-top: 40px;
+}
+
+div.subnavi_content p,
+div.subnavi_content table {
+  margin-left: 20px;
+}
+
+div.subnavi_content h4 {
+  margin: 20px 0 5px 20px;
+}
+
+label {
+  cursor:pointer;
+}
+
+label:hover {
+  color:red;
+}
+
+#ad {
+  text-align: center;
+  margin: 20px;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+td.bbcodebuttons input {
+  font-size: 9px;
+  padding: 0px;
+}
+
+
+ul.postview, ul.topiclist, ul.forumslist {
+  list-style: none;
+  padding-left: 0;
+}
+
+
+ul.postview li {
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: 10px;
+  padding: 6px;
+}
+
+ul.postview li div.user_info {
+  float: left;
+  width: 13%;
+}
+
+ul.postview li div.user_info span.poster_name,
+ul.postview li div.user_info span.rank {
+  float: left;
+  clear: both;
+}
+
+ul.postview li div.user_info div.avatar {
+  clear: both;
+  padding-top: 5px;
+  margin-bottom: 5px;
+}
+
+ul.postview li div.user_info span.rank {
+  font-size: 10px;
+}
+
+ul.postview li div.user_info span.poster_name {
+  
+}
+
+ul.postview li div.text {
+  line-height: 1.5em;
+}
+
+ul.postview li div.post_main_area {
+  float: right;
+  width: 87%;
+}
+
+ul.postview div.buttons {
+  clear: both;
+  margin-top: 15px;
+}
+
+ul.postview div.post_info span.subject {
+  font-weight: bold;
+  float: left;
+}
+
+ul.postview div.post_info span.time {
+  
+}
+
+ul.postview div.post_info {
+  margin-bottom: 5px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  text-align: right;
+}
+
+ul.postview span.edits {
+  font-size: 9px;
+  font-style: italic;
+}
+
+
+ul.forumslist {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+ul.forumslist li {
+  margin-left: 20px;
+}
+
+ul.forumslist li.forum, ul.forumslist li.locked-forum {
+  background-repeat: no-repeat;
+  background-position: 1px 1px;
+  padding-left: 40px;
+  min-height: 32px;
+  /*border:1px solid red;*/
+}
+
+ul.forumslist li.forum {
+  background-image: url('big_normal2.png');
+}
+
+ul.forumslist li.unreadposts {
+  background-image: url('big_newposts2.png');
+}
+
+ul.forumslist li.locked-forum {
+  background-image: url('big_locked2.png');
+}
+
+ul.forumslist li.categorie-header {
+  margin-left: 0;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-left-width: 2px;
+  border-top: none;
+  border-right: none;
+  padding: 3px;
+}
+
+ul.forumslist li span.name {
+  font-weight: bold;
+  display: block;
+  float: none;
+  margin-top: 7px;
+  margin-left: 0;
+  font-size: 12px;
+}
+
+ul.forumslist li span.description {
+  display: block;
+  float: none;
+  margin-left: 10px;
+  margin-top: 3px;
+}
+
+ul.forumslist li span.last_post {
+  margin-top: 3px;
+  display: block;
+  float: none;
+  margin-left: 10px;
+}
+
+ul.topiclist li {
+  border-style: solid;
+  border-width: 1px;
+  padding: 4px;
+  background-repeat: no-repeat;
+  background-position: 4px 50%;
+  min-height: 23.5px;
+  padding-left: 35px;
+}
+
+ul.topiclist li.topic {
+  background-image: url('small_normal.png');
+}
+
+ul.topiclist li.topic-unreadposts {
+  background-image: url('small_newposts.png');
+}
+
+ul.topiclist li.locked-topic,
+ul.topiclist li.locked-topic-sticky {
+  background-image: url('small_locked.png');
+}
+
+ul.topiclist li.topic-sticky {
+  background-image: url('small_sticky.png');
+}
+
+ul.topiclist li.topic-sticky-unreadposts {
+  background-image: url('small_sticky_newposts.png');
+}
+
+ul.topiclist li.locked-topic-unreadposts,
+ul.topiclist li.locked-topic-sticky-unreadposts {
+  background-image: url('small_newposts_locked.png');
+}
+
+ul.topiclist li span.topic_type {
+  font-weight: bolder;
+}
+
+ul.topiclist li span.subject {
+  display: inline;
+  float: none;
+  margin-left: 0px;
+  font-weight: bold;
+}
+
+ul.topiclist li div.info {
+  display: block;
+  float: none;
+  margin-left: 10px;
+  margin-top: 3px;
+}
+
+p.pagefooter {
+  border-top-width: 1px;
+  border-top-style: solid;
+  margin: 40px 20px 10px 10px;
+  font-size: 9px;
+}
+
+div.post_preview {
+  margin-left: 80px;
+}
+
+#board-index-stats span.admin_user {
+  font-weight: bold;
+}
+
+#board-index-stats span.invisible_user {
+  font-style: italic;
+}
+
+#board-index-stats span.val {
+  font-weight: bold;
+}
+
+ul.topiclist span.topic_pagination a {
+  padding: 3px 6px 3px 6px;
+}
+
+ul.topiclist span.topic_pagination {
+  line-height: 1.5em;
+}
+
+/*}*/

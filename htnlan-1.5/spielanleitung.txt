@@ -1,0 +1,87 @@
+Mittwoch, 17 Mai 2006
+
+Spielanleitung by Anubis
+
+
+So da ja hier, wie ich hoffe immer mehr und mehr user mitmachen und viele neulinge nicht wissen was sie am anfang zu tun haben, habe ich hier eine „kurze“ anleitung geschrieben.
+
+Für diejenigen dies nicht ganz so genau wissen wollen gibt’s ne kurzfassung ganz unten.
+
+Fangen wir an: Jede runde startet am FR um 18Uhr und endet FR um 17Uhr – sprich eine runde geht 7 tage und somit solltet ihr nicht gleich verzweifeln wenn mal eine runde nicht so läuft.
+
+Starten werdet ihr wenn ihr am FR gleich anfangt mit 10.000 credits – zusätzliches geld bekommt man durch MoneyMarket (mm) und durch trojaner (tt).
+
+Ziel des spiels ist es so viele PC’s wie möglich zu haben – man unterscheidet zwei arten:
+•    NoName (nn = herrenlose rechner; zu finden unter subnet oder 
+    auch tool – PC Suche – user 0)
+•    Rechner von Usern
+
+NN sind stets angreifbar und PCs von usern sind angreifbar sofern folgendes gilt:
+•    derjenige mit irgendeiner Waffe ausser Remote Scan angegriffen hat 
+•    Remote Hijack ausgebaut ist
+•    der user 3 tage off ist
+•    der user gesperrte ist
+•    info : die max. punktzahl eines PCs beträgt 1024 – dies heißt aber nicht,
+     dass er einen HiJack (hj) besitzt, da dieser nicht zu den punkten zählt
+
+Kommen wir nun zu einer möglichen strategie für den aufbau des ersten rechners
+1.    MoneyMarket-Update - Online-Werbung Stufe 5 
+2.    zum Upgrade-Menü – MoneyMarket Upgrade auf Sufe 4 (ermöglicht bau von 0900-Dialer, diesen dann ebenfalls beim MoneyMarket Upgrade auf Stufe 3 )
+3.    CPU auf 2400
+4.    Ram auf 256
+5.    SDK auf 3
+6.    Maleware auf 4
+7.    Trojaner auf 2.5
+
+Nun auf zum Operation-Center: auf „target“ klicken – dahinter kommt die IP des Zielrechners und dann auf „trojan transfer“ klicken – fertig ist das angriffsscript und dann holt euch die kohle
+
+Hinweis: eine IP findet ihr unter: Subnets – in eurem eigenen kostet der angriff nix – also nehmt eine von dort und die punktzahl sollte zwischen 100 und 250 liegen
+
+Weiter mit dem ausbauen:
+8.     trojaner auf stufe 5
+9.     maleware stufe 6  -  nun könnte ihr send anna benutzten – ein tt der noch mehr geld bringt
+10.    IP-Spoofing auf 3,5 
+11.    0900-Dialer auf 5
+12.    Internet auf 2
+13.    Bugsbunker auf 2  -  schritt 11 bis 13 sind nicht zwingend nötig aber durchaus sinnvoll
+
+Nun wird im ca. 18min takt trojanert und dann wie folgt:
+14.    CPU auf 3600
+15.    RAM auf 2048   -   oder auch auf 3072 = wichtig für DAs – kommt noch^^
+16.    SDK auf 5
+17.    Malware auf 10
+
+Nun den HiJack bauen und auf zum 2. rechner:
+•    eigendlich ist es nix anderes als ein tt – geht zum Operation-Center und nun wie immer – nur diesmal statt trojan send anna oder transfer den befehl remote hijack
+•    bei einem rechner mit 0 bis 200 pkt. sollte es meist funktionieren
+
+Taktik für einen rechner mit mehr punkten:
+•     Antivirus (av) und Firewall (fw) mit DAs zerstören
+•     DAs können unten bei CLUSTER erstellt werden ( neuer login manchmal nötig und folgende hardware: inet 2 – ram 3072 – sdk 4 – malware 7 )
+•    Jede DA zerstört (ohne teilnehmer – lohnt am anfang nicht) 0,5 stufen
+•    dann noch das IDS durch trojan deactivat ids entfernen und jacken
+
+Zwischen 0 Uhr und 2 Uhr sollte man in etwa den ersten rechner übernehmen können
+
+Zu guter letzt noch ein paar kleine anmerkungen:
+•    von FR bis SA um 18Uhr sind user nicht angreifbar – stellt euch also stets auf einen angriff am SA ein
+•    alleingänger kommen bei HTN nicht weit – teamplay ist gefragt – also sucht euch nen guten cluster und kommuniziert miteinander
+•    mitgliedsanträge könnt ihr unter bei dem jeweiligen profil des clusters erstellen – was anderes als nen 
+         standardantrag wird immer gern gesehen – die max. memberanzahl eines clusters beträgt 32
+
+So das wars mit den grundregeln – weitere taktiken findet ihr selber raus oder fragt euch ingame durch.
+
+
+HIER DIE KURZFASSUNG:
+•    moneymarket auf 4 ( upgradstufen 5 und 3)
+•    CPU 2400
+•    RAM 256
+•    SDK 4
+•    Malware 4 / 6
+•    Trojaner 2,5 / 5
+•    Optional: bugsbunker 2 , inet 2 , ipspoofing 3,5
+•    CPU 3600
+•    RAM 2048  -  für DAs 3078
+•    SDK 5
+•    Malware 10
+•    HiJack

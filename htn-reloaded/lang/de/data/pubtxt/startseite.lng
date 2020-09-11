@@ -1,0 +1,17 @@
+<?php
+
+$lang['login'] = "Login";
+$lang['name'] = "Nickname:";
+$lang['pass'] = "Passwort:";
+$lang['kip'] = "Keine IP-&Uuml;berpr&uuml;fung";
+$lang['ne'] = "(nicht empfohlen)";
+$lang['enter'] = "Enter";
+$lang['stat'] = "Statistiken";
+$lang['stati1'] = "Spieler Online (Server 1): ";
+$lang['astat'] = "Auf&uuml;hrliche Statistiken";
+$lang['anews'] = "Aktuelle News";
+$lang['imp'] = "Wichtig!";
+$lang['qc'] = "Der Quellcode dieses Spiels stammt im Original von ";
+$lang['qc2'] = ". Diesen Hinweis bitte nicht entfernen.";
+
+?>

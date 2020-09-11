@@ -1,0 +1,13 @@
+<div class="content" id="faq">
+
+<h2>FAQ</h2>
+<div id="faq-faq1">
+<h3>Was ist HackTheNet?</h3>
+<p>HackTheNet ist ein browserbasiertes Onlinespiel.<br />
+Ihr bekommt einen Computer in einem virtuellen (nicht existenten) Netzwerk
+zugewiesen. Hier steht ab jetzt die Expansion im Vordergrund.<br />
+Entwickelt euren Prozessor und andere Items weiter und verdient Geld. Bald seid Ihr soweit, dass
+Ihr Waffen (Viren, Trojaner etc.) entwickeln und gegen eure Feinde einsetzen k&ouml;nnt.</p>
+</div>
+
+</div>

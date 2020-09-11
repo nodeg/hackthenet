@@ -1,0 +1,2 @@
+Je nachdem wie weit das IP-Spoofing erforscht ist, desto eher ist ein Angriff
+erfolgreich und desto eher kannst du anonym bleiben!

@@ -1,0 +1,5 @@
+<h3>Registrierung</h3>
+<p><strong>Herzlichen Gl&uuml;ckwunsch!</strong></p>
+<p>In diesem Moment ist eine Email mit den Zugangsdaten f&uuml;r deinen neuen Hack the Net-Account
+an dich unterwegs! Bevor du den Account nutzen kannst, musst du ihn aktivieren. Wie das geht, steht
+in der Email. Ruf also jetzt deine Emails ab und in ein paar Minuten bist du dabei!</p>

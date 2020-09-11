@@ -1,0 +1,3 @@
+<div id="error"><h3>Fehler</h3>
+<p>Keine Registrierung m&ouml;glich, da von diesem PC k&uuml;rzlich schon ein Account erstellt wurde.</p>
+</div>

@@ -1,0 +1,9 @@
+<script language="JavaScript" type="text/javascript" src="static/selcountry.js"></script>
+<script language="JavaScript" type="text/javascript">
+
+function selectCountry(name) {
+document.coolform.country.value=name;
+document.coolform.submit();
+}
+
+</script>

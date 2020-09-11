@@ -1,0 +1,17 @@
+<div id="public-team" class="content">
+<h2>HackTheNet-Team</h2>
+
+<div id="team-kings">
+<h3>Wichtig!</h3>
+<p>Der Quellcode dieses Spiels stammt im Original von <a href="http://www.hackthenet.org/">www.hackthenet.org</a>.
+Dieser Hinweis darft nicht entfernt werden!</p>
+
+</div>
+
+<div id="team-else">
+<h3>Sonstiges</h3><br />
+<p>Danke an Everaldo Coelho (<a href="http://www.everaldo.com/">www.everaldo.com</a>) und seinen Mitarbeitern für seine ausgezeichneten Crystal-Icons, die Anwendung im Stylesheet "Crystal" gefunden haben.<br />
+Siehe auch die <a href="static/lizenz.txt">Lizenz der Icons</a> sowie die <a href="static/lgpl.txt">GNU LGPL</a>.</p>
+</div>
+
+</div>

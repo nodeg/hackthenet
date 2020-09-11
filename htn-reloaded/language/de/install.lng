@@ -1,0 +1,5 @@
+<?php
+
+$lang['installed_1'] = "HTN 2.1 wurde bereits installiert.";
+
+?>

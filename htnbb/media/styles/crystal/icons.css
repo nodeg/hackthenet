@@ -1,0 +1,118 @@
+@media screen, projection {
+#admin h2, #team h2, #changelog h2 { background-image: url(64/footstep.png); }
+#syslogs h2 { background-image: url(64/syslogs.png); }
+#work h2 { background-image:url(64/work.png); }
+#bugtracker h2 { background-image: url(64/important.png); }
+#cluster h2 { background-image: url(64/cluster.png); }
+#cboard h2 { background-image: url(64/cboard.png); }
+#gamble h2 { background-image: url(64/gamble.png); }
+#hackcenter h2 { background-image: url(64/network.png); }
+#hardware h2 { background-image: url(64/hardware.png); }
+#help h2 { background-image: url(64/help.png); }
+#messages h2 { background-image: url(64/mail.png); }
+#pc h2 { background-image: url(64/computer.png); }
+#register h2 { background-image: url(64/signup.png); }
+#support h2 {	background-image: url(64/support.png); }
+#user-notes h2 { background-image: url(64/notices.png); }
+#user-info h2 { background-image: url(64/user.png); }
+#user-logins h2 { background-image: url(64/signup.png); }
+#infocenter h2 { background-image: url(64/info.png); }
+#subnet h2 { background-image: url(64/subnet.png); }
+#opc h2 { background-image: url(64/attack1.png); }
+#wiki h2 { background-image: url(64/kedit.png); }
+
+#wiki h3 { background-image: url(32/document.png);}
+#wiki h3.edit { background-image: url(32/package_wordprocessing.png); }
+#wiki .wiki_page_content h3, h3.contents  { background-image: url(32/contents.png); }
+
+
+h3.identity { background-image: url(32/identity.png); }
+h3.login, #public-login h3 { background-image: url(32/signup.png); }
+h3.inquiry { background-image: url(32/view_text.png); }
+h3.misc { background-image: url(32/misc.png); }
+h3.post { background-image: url(32/view_text.png); }
+h3.move { background-image: url(32/transmit.png); }
+h3.cluster { background-image: url(32/cluster.png); }
+h3.contracts { background-image: url(32/contracts.png); }
+h3.star { background-image: url(32/star.png); }
+h3.edit { background-image: url(32/edit.png); }
+h3.folder { background-image: url(32/folder.png); }
+h3.misc { background-image: url(32/misc.png); }
+h3.bomb { background-image: url(32/bomb.png); }
+h3.pc { background-image: url(32/computer.png); }
+h3.config { background-image: url(32/settings.png); }
+h3.user { background-image: url(32/user.png); }
+h3.package { background-image: url(32/package.png); }
+h3.decrypted { background-image: url(32/decrypted.png); }
+h3.netconn { background-image: url(32/pipe.png); }
+h3.signup { background-image: url(32/signup.png); }
+h3.statistic { background-image: url(32/statistic.png); }
+h3.transfer { background-image: url(32/transmit.png); }
+h3.ram { background-image: url(32/memory.png); }
+h3.hdd { background-image: url(32/hdd.png); }
+h3.cpu { background-image: url(32/cpu.png); }
+h3.mb, h3.hardware { background-image: url(32/hardware.png); }
+h3.wrench { background-image: url(32/wrench.png); }
+h3.backup { background-image: url(32/backup.png); }
+h3.research { background-image: url(32/research.png); }
+h3.download { background-image: url(32/download.png); }
+h3.upgrade { background-image: url(32/upgrade.png); }
+h3.help { background-image: url(32/help.png); }
+h3.rule { background-image: url(32/rule.png); }
+h3.service { background-image: url(32/service.png); }
+h3.makemoney { background-image: url(32/makemoney.png); }
+h3.software { background-image: url(32/software.png); }
+
+h3.mail,
+#msgs-inbox h3,
+#msgs-outbox h3,
+#msgs-system h3,
+#msgs-transmit2-inbox h3 { background-image: url(32/mail.png); }
+
+.important h3, h3.important {	background-image: url(32/important.png); }
+.error h3, h3.error {	background-image: url(32/stop.png); }
+.ok h3, h3.ok { background-image: url(32/ok.png); }
+.tip h3, h3.tip {	background-image: url(32/tip.png); }
+.info h3, h3.info {	background-image: url(32/info.png); }
+.work h3, h3.work {	background-image: url(32/work.png); }
+
+h3.cancel { background-image: url(32/cancel.png); }
+
+#msgs-inbox td.number,
+#msgs-system td.number,
+#msgs-inarcbox td.number,
+#msgs-outarcbox td.number,
+#msgs-outbox td.number,
+#msgs-transmit2-inbox td.number,
+#msgs-transmit2-outbox td.number,
+#msgs-transmit2-inarc td.number,
+#msgs-transmit2-outarc td.number {
+	background-image: url(32/envelope.png);
+}
+
+#msgs-statistic h3 { background-image: url(32/statistic.png); }
+
+#msgs-inarcbox h3,
+#msgs-outarcbox h3 {
+	background-image: url(32/package.png);
+}
+
+#msgs-inbox tr.not-read td.number,
+#msgs-system tr.not-read td.number {
+	background-image: url(32-gray/mail-not-read.png);
+}
+
+#user-config h2 {	background-image: url(64/settings.png); }
+#user-config-accountinfo h3 {	background-image: url(32/info.png); }
+#user-config-profile h3, #user-config-usrimg h3 {	background-image: url(32/identity.png); }
+#user-config-signatures h3 { background-image: url(32/edit.png); }
+#user-config-email h3 { background-image: url(32/mail.png); }
+#user-config-password h3 { background-image: url(32/password.png); }
+
+div[id*="bank"] h2{
+  background-image:url(64/icons.png);
+}
+div[id$="bank"] h3{
+  background-image:url(32/icons.png);
+}
+}

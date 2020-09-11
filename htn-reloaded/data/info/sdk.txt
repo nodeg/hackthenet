@@ -1,0 +1,2 @@
+Das SDK (<i>Software Development Kit</i>) bestimmt durch seine Versionsnummer, welche
+anderen Items (z.B. Malware Kit oder IDS) verf&uuml;gbar sind.

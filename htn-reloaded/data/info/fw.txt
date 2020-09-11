@@ -1,0 +1,2 @@
+Die Firewall dient zur Verteidigung deines Rechners. Je weiter du sie entwickelst, desto
+effektiver k&ouml;nnen Angriffe abgewehrt werden!

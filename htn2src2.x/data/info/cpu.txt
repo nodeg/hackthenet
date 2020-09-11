@@ -1,0 +1,4 @@
+Der Prozessor ist die Zentrale. Je schneller er ist,
+desto mehr Items werden freigeschaltet.<br>
+Au&szlig;erdem werden die Bauvorg&auml;nge beschleunigt und bei der
+&Uuml;bernahme fremder Rechner ist seine Geschwindigkeit ebenfalls wichtig.

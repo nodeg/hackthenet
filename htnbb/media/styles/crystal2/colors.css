@@ -1,0 +1,103 @@
+/*@import url(../handheld-blue.css) handheld;
+@media screen, projection {*/
+
+body, html {
+  background-color: rgb(255,255,255);
+  color: rgb(0,0,0);
+}
+
+a { color: rgb(0,64,150); }
+
+h1 {
+  color: rgb(192,192,192);
+  /*background-image: url(logo.png);*/
+  background-image: url(logo1.png);
+}
+
+h2 {
+  border-color: rgb(192,192,192);
+  color: rgb(128,128,128)
+}
+
+th { background-color: rgb(213,213,213); }
+tr.head th, thead th {
+  color: rgb(255,255,255);
+  background-image: url(tr_head_bg.gif);
+}
+td { background-color: rgb(229,229,229); }
+table { border-color: rgb(192,192,192); }
+#generation-time { color: rgb(192,192,192); }
+#clock { color: rgb(0,0,0); }
+input.flatbutton {
+  background-image: url(input-bg-fade.png);
+  border-color: rgb(0,0,0);
+  background-color: rgb(240,240,240);
+}
+
+ul.navigation li a {
+  background-color: #e0e0e0;
+  border-color: rgb(192,192,192);
+  color: rgb(0,0,0);
+}
+
+ul.navigation li a:hover {
+  background-color: #cbd0de;
+  color: rgb(0,0,0);
+  border-color: rgb(10,36,106);
+}
+
+input.stylish, textarea {
+  background-color:rgb(240,240,240);
+  background-image: url(input-bg-fade.png);
+  border-color: rgb(192,192,192);
+}
+
+input.stylish:hover, textarea:hover, input.stylish:focus, textarea:focus {
+  background-color: rgb(255,255,255);
+}
+
+
+tr.submit td, tr.submit th { background-color: rgb(213,213,213); }
+
+blockquote.bb { border-color: rgb(192,192,192); background-color: rgb(230,230,230); }
+
+span.useronline, span.avail, span.attack_good { color: rgb(0,136,0); }
+span.useroffline, span.attack_bad { color: rgb(221,0,0); }
+
+div.sub_navi { border-right-color: rgb(192,192,192); }
+div.sub_navi ul li { list-style-image: url(item-arr.gif); }
+
+ul.postview li, div.post_preview {
+  border-color: rgb(141,141,141);
+}
+
+ul.postview div.post_info, div.post_preview div.post_info {
+  border-bottom-color:rgb(141,141,141);
+}
+
+ul.forumslist {
+  border-bottom-color: rgb(192,192,192);
+}
+
+ul.forumslist li.categorie-header {
+  background-color: rgb(213,213,213);
+  border-color: rgb(141,141,141);
+}
+
+ul.topiclist li {
+  border-color: rgb(192,192,192);
+}
+
+p.pagefooter {
+  border-top-color: rgb(192,192,192);
+}
+
+p.pagefooter, p.pagefooter a {
+  color: rgb(192,192,192);
+}
+
+ul.postview div.buttons, div.post_preview div.buttons {
+  border-top-color: rgb(141,141,141);
+}
+
+/*}*/

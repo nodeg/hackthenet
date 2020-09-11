@@ -1,0 +1,6 @@
+<div class="content">
+<div class="info"><h3>Sorry!</h3>
+<p>Leider sind im Moment keine Pl&auml;tze f&uuml;r neue Spieler mehr frei!<br />
+Demnächst (in 4 bis 8 Wochen) wird allerdings die Registrierungs-Phase (nicht die Spielphase) für Server 3
+starten. Probier es also später noch einmal!</p></div>
+</div>

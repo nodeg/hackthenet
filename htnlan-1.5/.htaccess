@@ -1,0 +1,9 @@
+<Files *res.php>
+order deny,allow
+deny  from all
+</Files>
+
+<IfModule mod_php4.c>
+php_flag magic_quotes_runtime Off
+php_flag magic_quotes_gpc Off
+</IfModule>

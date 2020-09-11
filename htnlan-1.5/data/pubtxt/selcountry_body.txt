@@ -1,0 +1,102 @@
+
+<span id="tip" style="color:black;background-color:lightyellow;border:1px solid black;padding:2px;display:none;position:absolute;font-family:tahoma,arial,verdana,helvetica;font-size:8pt;"></span>
+
+<div style="text-align:center;">
+
+<div id="weltkarte" style="display:block;">
+  <map name="mapWorld">
+  <area shape="poly" coords="231,126,220,147,243,179,270,174,282,238,296,253,327,230,346,229,357,192,339,190,352,171,358,155,372,140,359,128,321,118,284,111,273,106,250,108" href="javascript:showMap('afrika')" onmouseover="cinfo('Afrika')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="16,59,24,88,48,85,44,130,68,157,106,196,126,237,140,298,171,297,165,250,203,209,191,178,159,156,136,129,141,110,170,93,187,65,216,63,237,52,263,22,56,38" href="javascript:showMap('amerika')" onmouseover="cinfo('Amerika')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="236,109,267,107,292,110,306,101,316,95,325,87,322,80,310,45,295,28,253,33,229,57,221,84" href="javascript:showMap('europa')" onmouseover="cinfo('Europa')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="443,225,475,201,491,190,517,197,517,180,552,183,578,257,529,283,481,270,445,226,445,225" href="javascript:showMap('australien')" onmouseover="cinfo('Australien')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="361,157,443,197,475,204,498,182,530,46,390,26,296,28,310,45,325,88,303,103,307,112,350,122,378,135,370,159,380,166" href="javascript:showMap('asien')" onmouseover="cinfo('Asien')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="168,320,167,305,208,297,257,290,279,300,371,294,429,299,446,316,440,335,181,330" href="javascript:selectCountry('antarktis')" onmouseover="cinfo('Antarktis')" onmouseout="cinfo(0)">
+  </map>
+  <img width=583 height=328 src="%path%/welt.jpg" usemap="#mapWorld" border=0 >
+</div>
+
+<div id="karte_europa" style="display:none;">
+  <div style="text-align:center;"><a href="#" onclick="showMap('world');">Zur&uuml;ck zur Weltkarte</a></div>
+  <map name="mapEuropa">
+  <area shape="poly" onmouseover="cinfo('Deutschland')" onmouseout="cinfo(0)" coords="234,287,225,284,222,281,224,276,222,273,220,265,222,256,225,256,228,248,240,246,235,236,251,237,261,239,276,242,282,263,264,273,266,277,275,288,267,295,271,301,247,302,230,300" href="javascript:selectCountry('deutschland')">
+  <area shape="poly" onmouseover="cinfo('Irland')" onmouseout="cinfo(0)" coords="124,232,120,236,118,237,120,239,124,242,128,243,130,251,129,259,125,264,117,267,106,270,99,272,94,265,92,256,102,251,100,243,102,232,111,234,114,228,125,228,126,231" href="javascript:selectCountry('irland')">
+  <area shape="poly" onmouseover="cinfo('Frankreich')" onmouseout="cinfo(0)" coords="132,295,138,298,152,304,155,315,156,320,153,331,150,344,153,349,168,354,172,354,179,357,189,359,195,355,197,353,212,357,221,358,224,352,226,345,224,343,220,334,223,331,220,321,216,322,216,317,219,310,217,304,221,300,231,292,222,287,221,278,216,278,217,284,211,281,204,279,193,266,186,267,172,278,164,285,143,287" href="javascript:selectCountry('frankreich')">
+  <area shape="poly" onmouseover="cinfo('Schweiz')" onmouseout="cinfo(0)" coords="222,320,228,321,231,315,236,320,238,315,249,315,249,311,244,309,241,306,241,303,228,301,222,304,218,312,219,316,227,320,228,320" href="javascript:selectCountry('schweiz')">
+  <area shape="poly" onmouseover="cinfo('Spanien')" onmouseout="cinfo(0)" coords="159,345,165,351,195,360,200,358,200,365,180,375,180,378,168,387,168,392,181,389,191,384,204,382,210,387,210,392,183,399,174,396,168,393,171,397,163,402,161,407,148,413,147,415,126,412,120,415,116,417,112,416,106,404,102,403,102,397,105,393,105,387,109,383,105,377,111,376,114,362,123,357,117,353,112,352,102,355,91,357,90,344,108,334,114,331,118,335,132,336,141,341,145,340,150,343,156,342" href="javascript:selectCountry('spanien')">
+  <area shape="poly" onmouseover="cinfo('Portugal')" onmouseout="cinfo(0)" coords="99,355,106,357,113,354,117,362,118,364,112,367,111,371,108,380,108,382,104,382,103,384,105,387,102,392,102,396,98,404,98,408,90,408,86,406,84,408,82,406,84,402,87,393,88,393,86,384,86,379,92,372,96,360" href="javascript:selectCountry('portugal')">
+  <area shape="poly" onmouseover="cinfo('Italien')" onmouseout="cinfo(0)" coords="228,345,234,340,239,338,248,342,249,348,251,354,258,361,243,370,236,373,231,373,229,377,231,385,231,397,233,402,240,398,246,396,246,389,249,381,249,376,246,372,260,363,269,371,275,371,282,376,286,378,292,384,296,389,296,398,295,398,284,401,280,404,272,401,267,404,267,410,274,414,284,418,293,422,289,412,297,416,297,410,303,407,308,400,313,393,312,386,307,384,308,382,313,383,316,387,320,385,321,379,316,373,310,371,299,367,299,364,295,362,290,360,283,354,274,343,268,339,266,329,267,325,273,325,274,316,276,313,268,313,260,309,253,311,249,312,251,315,244,315,240,320,234,316,231,321,225,321,225,325,224,330,225,337,227,342,234,340,240,337,246,340,248,342" href="javascript:selectCountry('italien')">
+  <area shape="poly" onmouseover="cinfo('Gro&szlig;britannien')" onmouseout="cinfo(0)" coords="122,207,129,228,149,243,135,254,128,279,170,276,192,265,186,244,166,220,151,198" href="javascript:selectCountry('england')">
+  <area shape="poly" onmouseover="cinfo('Schweden')" onmouseout="cinfo(0)" coords="255,200,272,231,287,225,293,220,301,210,307,200,311,182,298,174,302,163,322,153,328,138,340,136,338,122,317,107,299,114,274,147,266,155,270,176,258,200,258,200" href="javascript:selectCountry('schweden')">
+  <area shape="poly" onmouseover="cinfo('Finnland')" onmouseout="cinfo(0)" coords="341,136,346,143,335,150,327,161,322,170,331,184,336,192,366,189,375,183,397,163,393,156,389,151,379,135,377,123,370,107,371,103,347,109,335,111,326,109,333,117,342,127,343,144,335,152" href="javascript:selectCountry('finnland')">
+  <area shape="poly" onmouseover="cinfo('Griechenland')" onmouseout="cinfo(0)" coords="335,373,324,390,325,407,347,418,361,410,373,397,373,379,381,366,382,361,367,361,354,362,346,364" href="javascript:selectCountry('griechenland')">
+  <area shape="poly" onmouseover="cinfo('Island')" onmouseout="cinfo(0)" coords="21,130,18,150,25,161,75,162,101,140,81,125" href="javascript:selectCountry('island')">
+  <area shape="poly" onmouseover="cinfo('&Ouml;sterreich')" onmouseout="cinfo(0)" coords="260,302,246,302,248,309,261,306,275,312,294,309,302,299,301,293,288,289,283,292,274,293,270,299,263,303" href="javascript:selectCountry('austria')">
+  <area shape="poly" onmouseover="cinfo('Russland')" onmouseout="cinfo(0)" coords="377,181,372,194,370,207,382,224,396,227,412,247,405,253,411,259,424,253,432,267,438,271,448,280,469,279,477,285,480,298,474,300,466,301,471,306,466,309,463,312,463,316,463,323,456,323,472,334,484,345,519,352,528,351,542,365,557,369,556,354,543,332,559,323,563,315,562,120,499,119,506,105,457,106,386,100,371,106,379,124,397,164" href="javascript:selectCountry('russland')">
+  <area shape="poly" onmouseover="cinfo('T&uuml;rkei')" onmouseout="cinfo(0)" coords="376,388,382,362,391,357,411,362,436,353,484,359,523,363,541,405,506,414,449,423,407,424,391,418,380,396,376,390" href="javascript:selectCountry('tuerkei')">
+  </map>
+  <img src="%path%/europa.jpg" width=609 height=480 usemap="#mapEuropa" border=0>
+  <div style="text-align:center;"><a href="#" onclick="showMap('world');">Zur&uuml;ck zur Weltkarte</a></div>
+</div>
+
+<div id="karte_asien" style="display:none;">
+  <div style="text-align:center;"><a href="#" onclick="showMap('world');">Zur&uuml;ck zur Weltkarte</a></div>
+  <map name="mapAsien">
+  <area shape="poly" coords="39,48,45,75,36,90,41,106,50,110,65,126,80,140,74,149,89,159,107,161,118,166,119,158,115,145,120,140,109,134,110,128,119,124,135,122,156,129,160,125,155,113,167,111,185,106,192,113,203,111,221,120,235,129,248,128,265,130,284,129,286,121,297,123,322,132,350,131,355,128,362,111,378,116,405,134,417,137,418,147,420,159,432,159,437,139,430,124,416,112,403,111,412,93,439,91,449,80,485,126,526,65,444,43,343,33,224,17,126,19,89,35" href="javascript:selectCountry('russland')" onmouseover="cinfo('Russland')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="43,170,69,168,94,168,105,166,108,180,107,186,69,191,50,191,40,182" href="javascript:selectCountry('tuerkei')" onmouseover="cinfo('T&uuml;rkei')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="85,211,84,220,74,225,105,274,126,281,138,271,158,262,161,250,139,244,134,229,115,220" href="javascript:selectCountry('saudi-arabien')" onmouseover="cinfo('Saudi-Arabien')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="204,183,185,185,180,192,172,196,175,209,177,215,178,220,193,219,202,211,209,201,213,195" href="javascript:selectCountry('afghanistan')" onmouseover="cinfo('Afghanistan')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="212,186,234,190,234,196,225,201,232,210,219,230,214,232,221,245,203,245,197,239,178,243,184,232,179,222,198,219,206,212" href="javascript:selectCountry('pakistan')" onmouseover="cinfo('Pakistan')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="121,178,108,177,109,187,118,195,116,201,122,208,131,219,139,222,160,236,177,242,182,226,174,215,171,195,170,186,145,183,136,188" href="javascript:selectCountry('iran')" onmouseover="cinfo('Iran')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="101,187,97,200,91,206,95,211,119,222,130,220,122,208,114,195,108,186" href="javascript:selectCountry('irak')" onmouseover="cinfo('Irak')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="343,160,299,162,272,149,250,130,238,144,234,167,218,175,244,203,254,218,297,228,327,231,331,247,357,255,387,256,411,237,412,215,401,192,402,172,420,160,413,139,364,114,357,134,371,144" href="javascript:selectCountry('china')" onmouseover="cinfo('China')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="235,198,228,201,234,213,216,235,222,247,211,256,225,262,228,277,248,315,250,317,264,308,262,286,278,269,291,253,286,237,248,225,250,215,239,205,243,200" href="javascript:selectCountry('indien')" onmouseover="cinfo('Indien')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="422,160,423,184,402,187,404,168" href="javascript:selectCountry('nordkorea')" onmouseover="cinfo('Nordkorea')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="451,146,456,172,445,190,434,203,439,219,459,211,480,201,477,176,473,152" href="javascript:selectCountry('japan')" onmouseover="cinfo('Japan')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="330,260,322,262,328,286,333,310,345,344,354,350,362,333,348,323,338,307,341,298,352,291,360,287,354,276" href="javascript:selectCountry('thailand')" onmouseover="cinfo('Thailand')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="357,255,344,256,355,279,365,287,353,314,357,319,370,315,385,302,376,288" href="javascript:selectCountry('vietnam')" onmouseover="cinfo('Vietnam')" onmouseout="cinfo(0)">
+  </map>
+  <img src="%path%/asien.jpg" width=563 height=440 usemap="#mapAsien" border=0>
+  <div style="text-align:center;"><a href="#" onclick="showMap('world');">Zur&uuml;ck zur Weltkarte</a></div>
+</div>
+
+<div id="karte_australien" style="display:none;">
+  <div style="text-align:center;"><a href="#" onclick="showMap('world');">Zur&uuml;ck zur Weltkarte</a></div>
+  <map name="mapAustralien">
+  <area shape="poly" coords="155,90,23,176,14,276,101,259,143,285,167,341,209,322,291,216,233,88,205,103" href="javascript:selectCountry('australien')" onmouseover="cinfo('Australien')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="371,257,357,270,355,290,269,335,271,352,299,355,345,336,385,303,392,278" href="javascript:selectCountry('neuseeland')" onmouseover="cinfo('Neuseeland')" onmouseout="cinfo(0)">
+  </map>
+  <img src="%path%/australien.jpg" width=416 height=400 usemap="#mapAustralien" border=0>
+  <div style="text-align:center;"><a href="#" onclick="showMap('world');">Zur&uuml;ck zur Weltkarte</a></div>
+</div>
+
+<div id="karte_amerika" style="display:none;">
+  <div style="text-align:center;"><a href="#" onclick="showMap('world');">Zur&uuml;ck zur Weltkarte</a></div>
+  <map name="mapAmerika">
+  <area shape="poly" coords="233,407,234,417,251,428,263,425,272,432,287,439,289,450,296,453,301,471,316,493,315,506,311,515,327,536,339,525,349,495,371,486,380,443,395,408,359,383,330,374,325,347,316,362,289,367,289,351,268,356,272,369,267,369,257,367,250,371,250,390" href="javascript:selectCountry('brasilien')" onmouseover="cinfo('Brasilien')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="200,401,202,392,210,399,219,387,226,381,226,378,250,392,233,403,238,414,253,430,253,464,245,461,221,446,200,405" href="javascript:selectCountry('peru')" onmouseover="cinfo('Peru')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="85,270,78,223,106,230,125,230,130,241,135,234,143,248,154,253,157,279,169,273,191,279,181,297,173,291,155,302,119,298" href="javascript:selectCountry('mexico')" onmouseover="cinfo('Mexico')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="197,271,198,282,212,284,227,297,241,297,246,279,222,268" href="javascript:selectCountry('kuba')" onmouseover="cinfo('Kuba')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="68,208,89,223,121,226,128,237,133,234,145,250,174,241,205,244,212,259,219,255,221,234,289,171,292,160,291,154,275,162,234,176,238,163,219,158,209,149,90,149,65,190" href="javascript:selectCountry('usa')" onmouseover="cinfo('USA')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="8,93,11,118,70,109,135,55,113,39,22,63" href="javascript:selectCountry('usa')" onmouseover="cinfo('USA')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="83,100,92,127,92,151,209,151,231,160,234,172,251,167,289,156,291,167,292,180,325,169,356,158,342,100,359,68,340,39,412,10,339,5,265,14,197,27,159,50,128,63" href="javascript:selectCountry('kanada')" onmouseover="cinfo('Kanada')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="352,36,382,48,368,84,380,115,435,84,505,50,526,18,478,5,409,12,371,21" href="javascript:selectCountry('groenland')" onmouseover="cinfo('Gr&ouml;nland')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="265,484,265,489,258,491,263,500,258,507,260,513,258,518,267,533,265,545,267,565,277,594,277,612,298,625,304,612,303,590,303,574,316,561,320,543,310,536,310,518,313,511,315,504,304,504,306,497,286,482,268,477" href="javascript:selectCountry('argentinien')" onmouseover="cinfo('Argentinien')" onmouseout="cinfo(0)">
+  </map>
+  <img width=547 height=659 src="%path%/amerika.jpg" usemap="#mapAmerika" border=0>
+  <div style="text-align:center;"><a href="#" onclick="showMap('world');">Zur&uuml;ck zur Weltkarte</a></div>
+</div>
+
+<div id="karte_afrika" style="display:none;">
+  <div style="text-align:center;"><a href="#" onclick="showMap('world');">Zur&uuml;ck zur Weltkarte</a></div>
+  <map name="mapAfrika">
+  <area shape="poly" coords="264,256,255,272,257,291,260,306,268,312,278,297,287,272,294,251,292,237,276,237" href="javascript:selectCountry('madagaskar')" onmouseover="cinfo('Madagaskar')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="152,313,159,312,166,311,167,287,167,283,171,280,171,261,132,260,135,271" href="javascript:selectCountry('namibia')" onmouseover="cinfo('Namibia')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="150,320,152,315,168,311,167,296,168,296,171,302,178,296,188,298,201,281,211,281,215,300,219,301,217,316,195,336,178,341,165,342,157,338,156,328" href="javascript:selectCountry('suedafrika')" onmouseover="cinfo('S&uuml;dafrika')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="183,37,187,90,183,91,153,75,147,78,137,73,129,69,123,64,125,45,136,32,147,33,165,32,185,30" href="javascript:selectCountry('lybien')" onmouseover="cinfo('Lybien')" onmouseout="cinfo(0)">
+  <area shape="poly" coords="183,38,187,82,224,82,232,75,224,59,227,38" href="javascript:selectCountry('egypt')" onmouseover="cinfo('&Auml;gypten')" onmouseout="cinfo(0)">
+  </map>
+  <img src="%path%/afrika.jpg" width=321 height=365 usemap="#mapAfrika" border=0>
+  <div style="text-align:center;"><a href="#" onclick="showMap('world');">Zur&uuml;ck zur Weltkarte</a></div>
+</div>
+
+</div>
