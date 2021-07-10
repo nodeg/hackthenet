@@ -1,9 +1,5 @@
 # htnbb
-The original HTN.BB burning board from Ingmar Runge.
-
-
-
-
+The original Hack The Net Burning Board from Ingmar Runge.
 
 #### So, 28. Mai. 06 um 00:53:37 Uhr
 
@@ -26,10 +22,7 @@ The original HTN.BB burning board from Ingmar Runge.
 >Grüße
 >Ingmar
 
-
-
 #### So, 28. Mai. 06 um 13:02:51 Uhr
-
 
 >Wenn ihr so geil drauf seid, hier:
 >
@@ -37,6 +30,7 @@ The original HTN.BB burning board from Ingmar Runge.
 >
 >Ich gebe aber keinen Support! Viel Spaß also beim Zum-Laufen-Bringen
 
+Source: https://web.archive.org/web/20090625151608/http://forums.gameimpact.de/bb.php/browse/topic/1113.xhtml
 _________________________________________________
 Problem:
     Fehler vom Typ 2 in common_functions.php in Zeile 117: mysqli::select_db() [function.mysqli-select-db]: invalid object or resource mysqli
