@@ -1,0 +1,153 @@
+body {
+	font-family:verdana,arial,sans-serif,helvetica;
+	font-size:10pt;
+	margin:0;
+	padding:0;
+	background-image:url(bg.gif);
+}
+
+a {
+	color:darkblue;
+}
+
+table {
+	font-size:10pt;
+}
+
+h1 {
+	background-image:url(logo_new_small.gif);
+	background-repeat:no-repeat;
+	font-size:1px;
+	color:black;
+	height:100px;
+	margin:0;
+}
+
+ul.navigation {
+	background-image:url(bg_start.gif);
+	position:absolute;
+	top:0;
+	left:300px;
+	right:0;
+	height:100px;
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+
+ul.navigation li {
+	color:white;
+	padding:10px;
+	margin:0;
+	float:left;
+}
+
+ul.navigation li:before {
+	content:"| ";
+}
+
+ul.navigation li a {
+	color:white;
+	text-decoration:none;
+}
+ul.navigation li a:hover {
+	text-decoration:underline;
+}
+
+
+ul.navigation li .help {
+	display:none;
+}
+
+ul.navigation li .new-messages {
+	background-image:url(newmail.gif);
+	background-repeat:no-repeat;
+	color:black;
+	display:block;
+	font-weight:bold;
+	height:25px;
+	position:absolute;
+	padding:2px 10px 2px 50px;
+	right:0;
+	top:120px;
+}
+
+div.content {
+	margin:60px;
+}
+
+h2, h3 {
+	color:midnightblue;
+}
+
+a:hover {
+	color:royalblue;
+	text-decoration:none;
+}
+
+textarea, input, select, option {
+	background-color:#808080;
+	font-family:Verdana,Arial;
+	color:#E5E5E5;
+	font-size:8pt;
+	border-width:1px;
+	font-weight:bold;
+	border-color:#101F70;
+	border-colordark:steelblue;
+	border-colorlight:lightsteelblue;
+}
+
+textarea {
+	padding:4px;
+}
+
+th {
+	background-color:#AFAFAF;
+	color:black;
+	text-align:left;
+	font-weight:bold;
+	padding:2px 10px;
+}
+
+td {
+	background-color:#dddddd;
+	padding:2px 10px;
+}
+
+h3 {
+	background-image:url(fade.jpg);
+	background-repeat:no-repeat;
+	background-position:bottom left;
+	font-size:12pt;
+	font-weight:bold;
+	margin:35px 0px 5px;
+}
+
+dt {
+	font-weight:bold;
+}
+
+tr.mail, tr.sendmail, tr.sendmail-buttons {
+	background-color:#ebebeb;
+}
+
+tr.mail-head td, tr.sendmail-head td {
+	background-color:steelblue;
+	color:#eeeeee;
+	font-weight:bold;
+	background-image:url(tr_head_bg.gif);
+}
+
+div.ad
+{
+	padding:20px;
+}
+
+.miniad
+{
+  position: absolute;
+  right: 45px;
+  top: 45px;
+  color: white;
+  z-index: 100;
+}

@@ -1,0 +1,3 @@
+Das IDS (<i>Intrusion Detection System</i>) ist der "Gegenspieler" des IP-Spoofings.
+Es kann den Urheber eines Angriffs ausfindig machen und hilft auch generell bei der
+Verteidigung deines Rechners.

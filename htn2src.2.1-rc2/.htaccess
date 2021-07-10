@@ -1,0 +1,10 @@
+AddType application/x-httpd-php .php
+
+DirectoryIndex index.php
+
+<IfModule mod_php4.c>
+php_flag magic_quotes_runtime Off
+php_flag magic_quotes_gpc Off
+php_flag error_reporting 2039
+php_flag display_errors On
+</IfModule>

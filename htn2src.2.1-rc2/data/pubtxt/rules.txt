@@ -1,0 +1,101 @@
+<div class="content" id="rules">
+<h2>Regeln</h2>
+
+<div class="important">
+<h3>Wichtig</h3>
+<p>Jeder User, der sich f&uuml;r das Spiel registriert, verpflichtet sich, diese Regeln einzuhalten und Regelverst&ouml;&szlig;e anderer zu melden.</p>
+</div>
+
+<div id="rules-rules">
+<h3>&sect;1</h3>
+<p>Der Spieler ist gehalten, sich regelmäßig die Regeln durchzulesen.</p>
+<p>Wer mit den Regeln nicht einverstanden ist, ist verpflichtet seinen Account zu löschen!</p>
+<p>Die Reihenfolge der hier genannten Regeln ist irrelevant. Alle Regeln haben die gleiche Priorität, sofern nicht
+anders bemerkt!</p>
+<p>Die Entscheidung über Strafen bei Verstößen wird von den Admins im Einzelfall getroffen und ist nicht anfechtbar.</p>
+<p>Extended Account-Spieler die Ihren Extended Account schon mehr als zwei Wochen besitzen, haben im Falle einer
+Accountlöschung wegen Regelverstößen kein Anrecht auf Zurückzahlung des Geldes.</p>
+
+<h3>&sect;2 - Multis</h3>
+<p>Das Besitzen mehrerer Accounts gleichzeitig, ist verboten und führt zum Spielausschluss.
+Ausnahmen:<br />
+<p>a) Extended Account-Spieler dürfen pro Server einen Account besitzen.<br />
+b) Es ist gestattet, einen fremden Account kurzfristig zu betreuen, z.B. wenn der Besitzer im Urlaub ist.</p>
+<p>Außerdem ist es gestattet, dass sich mehrere (maximal 3) Spieler einen Account teilen, sofern diese Personen keine
+weiteren Accounts besitzen. Was nicht gestattet ist, ist z.B. dass der
+ganze Cluster die Passwörter von allen Mitspielern besitzt.</p>
+
+<h3>&sect;3 - Beleidigungen</h3>
+<p>Beleidigungen, die innerhalb des Spiels oder Forums ablaufen (der IRC-Channel gehört hier nicht dazu) können mit Punkt-Abzug
+oder zeitweiliger Account-Sperrung bestraft werden.</p>
+
+<h3>&sect;4 - Bugusing</h3>
+<p>Das Ausnutzen von Fehlern in der Programmierung, sogenannte Bugs, zu seinem eigenen Vorteil
+ist nicht gestattet. Wer Bugs ausnutzt um sich oder anderen dadurch einen Vorteil zu verschaffen,
+wird mit sofortiger Wirkung aus dem Spiel gelöscht.<br />
+Es ist dagegen erwünscht, dass Fehler bei den Admins oder im Forum gemeldet werden.
+In diesem Fall bestehen allerdings keinerlei Entlohnungs-Ansprüche!</p>
+
+<h3>&sect;5 - Bots</h3>
+<p>Es ist strengstens verboten, jegliche Seiten von HackTheNet mit anderen Programmen außer dem Browser abzurufen,
+dies bezieht sich besonders auf sogenannte Bots oder auch andere Tools, die das Webinterface ersetzen sollen.<br />
+
+a) Erlaubt sind jegliche öffentlich zugänglichen Browser wie Mozilla, Opera, Netscape, Internet Explorer, Konqueror oder Lynx.
+<br />
+b) Jegliche Aufrufe von Fremdquellen (Seiten oder Programme), die nicht auf dem HTN-Server liegen, sind verboten,
+Hierzu zählen insbesondere Seiten/Tools die vereinfachtes einloggen oder Verwalten von Accounts ermöglichen.
+<br />
+c) Auch das programmtechnische oder manuelle Verändern von Links, die vom HTN-Server stammen, ist im Spiel verboten.
+</p>
+
+<h3>&sect;6 - Eingriffe in die Spieltechnik</h3>
+<p>Maßnahmen die übermäßigen Traffic verursachen oder dazu geeignet sind, den Spielablauf zu beeinträchtigen
+sind zu unterlassen und können geahndet werden.<br />
+Verboten sind ebenso automatische oder halbautomatische Scripts, welche Anfragen an die Datenbank ausführen oder
+Spielmechanismen in Gang setzen.<br />
+Ein Verstoß dagegen führt zum sofortigen Ausschluss aus dem Spiel und kann in Ausnahmefällen zu einer
+Strafanzeige führen. Verschafft sich ein User widerrechtlich Zugang zu einem fremden Account muss er mit einer
+Strafanzeige rechnen.</p>
+
+<h3>&sect;7 - Falschmeldungen</h3>
+<p>Wer wissentlich falsche Bugs oder falsche Regelverstöße meldet oder anderweitig versucht Bugs oder Regelverstöße vorzutäuschen,
+wird mit sofortiger Wirkung aus dem Spiel gelöscht.
+Dies gilt insbesondere für Personen die darauf spekulieren, verlorene Credits oder PCs damit
+wieder zu bekommen.</p>
+
+<h3>&sect;8 - Wiedergutmachung im Schadensfall</h3>
+<p>Wer durch einen Bug, Serverausfall oder Ähnliches Credits, PCs usw. verliert, hat keinen Anspruch auf Wiedergutmachung, egal 
+in welcher Form. Persönliche Backups werden nur in Ausnahmefällen bewilligt,
+dies entscheidet wiederum der Admin welcher den jeweiligen Fall bearbeitet.<br />
+Eine Entscheidung eines Admins bei einem Anderen zu hinterfragen um ein anderes Ergebnis zu erhalten, wird bestraft.</p>
+
+<h3>&sect;9 - Verlieren können</h3>
+<p>Der Spieler muss es akzeptieren können, auch mal zu verlieren! Es ist nur ein Spiel. Ebenso sind "Heul-Threads" im Forum nicht erwünscht!</p>
+
+<h3>&sect;10  - Accounts löschen</h3>
+<p>Das Löschen von Accounts und sofortige Neuanlegen z.B. zwecks Startgeld ist VERBOTEN!</p>
+
+
+<h3>&sect;11  - Adminrechte</h3>
+<p>Die Administratoren sind berechtigt, Accounts auf Verdacht zu sperren solange
+eine Untersuchung des mögl. Regelverstoßes läuft. Weiterhin sind die Admins berechtigt
+Regelverstöße auch rückwirkend durchzusetzen und auch Vergehen aus vorangegangenen Runden
+in der aktuellen Runde zu ahnden.</p>
+
+<h3>&sect;12 - Eigentumsverhältnisse</h3>
+<p>Jeder Account, sowie die Credits und Computer sind virtuelle Gegenstände im Spiel
+und bleiben Eigentum der HTN-Admins. Sie werden den Spielern nur leihweise zur Verfügung gestellt.
+Das Verkaufen von Accounts oder Credits ist strengstens verboten! Was allerdings erlaubt ist, ist,
+die Zugangsdaten für den eigenen Account gegen Bezahlung weiterzugeben.</p>
+
+<h3>&sect;13 - Salvatorische Klausel</h3>
+<p>Sollte eine der vorgenannten Bestimmungen nichtig sein oder werden, so bleibt die Gültigkeit der übrigen Bedingungen hiervon unberührt.</p>
+
+
+
+<h3>&sect;13 - Haftungsausschluss</h3>
+<p>Das Spiel wird "so wie es ist" zur Verfügung gestellt. Es bestehen auch im Falle eines Datenverlustes (auf unseren Servern gespeicherte Daten wie z.B. Ingame-Mails)
+keinerlei materielle oder sonstwie geartete Ansprüche gegen die Spiel-Admins.</p>
+
+</div>
+</div>

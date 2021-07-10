@@ -1,0 +1,2 @@
+Mit dieser &auml;u&szlig;erst n&uuml;tzlichen Technologie k&ouml;nnen mehrer User aus einem Cluster
+einen gemeinsamen Angriff auf einen feindlichen Rechner starten!
